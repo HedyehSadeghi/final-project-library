@@ -18,7 +18,7 @@ public class Category {
     @Column(nullable = false)
     private String name;
 
-    @ManyToMany(mappedBy = "categoryList")
+    @ManyToMany
     @OnDelete(action = OnDeleteAction.CASCADE)
     List<Book> bookList;
 
