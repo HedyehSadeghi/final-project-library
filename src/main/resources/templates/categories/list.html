@@ -28,12 +28,10 @@
         <tr th:each="category: ${categoryList}">
             <td th:text="${category.name}"></td>
             <td class="d-flex justify-content-around">
-                <a class="btn btn-primary" th:href="@{/}" role="button">
-                    Details </a>
-                <a class="btn btn-primary" th:href="@{/}" role="button">
+                <a class="btn btn-primary" th:href="@{/categories/edit/{id}(id=${category.id})}" role="button">
                     Edit </a>
                 <form
-                        th:action="@{/}"
+                        th:action="@{/categories/delete/{id}(id=${category.id})}"
                         method="post"
                         onsubmit="return confirm('Are you sure?')">
                     <button type="submit" class="btn btn-danger"> Delete</button>
@@ -44,12 +42,12 @@
     </table>
 
 
-    <a class="btn btn-success" th:href="@{/}" role="button">Add category</a>
+    <a class="btn btn-success" th:href="@{/categories/create}" role="button">Add category</a>
 
 
     <hr>
     <div class="d-flex justify-content-between">
-        <a class="btn btn-primary" th:href="@{/books}" role="button">Back to Home</a>
+        <a class="btn btn-primary" th:href="@{/books}" role="button">Back to Books</a>
     </div>
 
 
