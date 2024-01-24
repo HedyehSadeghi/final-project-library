@@ -26,14 +26,10 @@
         </thead>
 
         <tbody>
-        <tr th:each="book: ${bookList}">
+        <tr th:each="book: ${bookList}" th:classappend="${book.getWarehouse()<10 ? 'table-warning' : ''}">
             <td th:text="${book.title}"></td>
             <td th:text="Available"></td>
             <td class="d-flex justify-content-around">
-                <a class="btn btn-primary" th:href="@{/}" role="button">
-                    Details </a>
-                <a class="btn btn-primary" th:href="@{/}" role="button">
-                    Edit </a>
                 <form
                         th:action="@{/}"
                         method="post"
