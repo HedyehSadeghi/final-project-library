@@ -26,6 +26,17 @@ public class ClientPurchase {
     @NotNull(message = "Price must not be empty")
     private BigDecimal price;
 
+    public Book getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(Book bookId) {
+        this.bookId = bookId;
+    }
+
+    @ManyToOne
+    private Book bookId;
+
     public Integer getId() {
         return id;
     }
