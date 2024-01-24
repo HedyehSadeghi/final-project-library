@@ -11,7 +11,9 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @NotEmpty
+    @Column(nullable = false)
     private String name;
+
 
     public Integer getId() {
         return id;
