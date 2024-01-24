@@ -43,6 +43,6 @@ public class ClientPurchaseController {
             return "clients/create";
         }
         ClientPurchase savedClientPurchase = clientPurchaseRepository.save(formClientPurchase);
-        return "redirect:/clients/purchaseslist";
+        return "redirect:/clients/purchases";
     }
 }

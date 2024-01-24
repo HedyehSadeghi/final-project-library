@@ -88,6 +88,10 @@ public class BookController {
     public String delete(@PathVariable Integer id, RedirectAttributes redirectAttributes) {
         Optional<Book> result = bookRepository.findById(id);
         if (result.isPresent()) {
+            Book book = result.get();
+            
+            book.setClientPurchaseList(null);
+            book.setSupplierBookPurchaseList(null);
             bookRepository.deleteById(id);
             redirectAttributes.addFlashAttribute("redirectMessage", "Book " + result.get().getTitle() + " deleted!");
             return "redirect:/books";
