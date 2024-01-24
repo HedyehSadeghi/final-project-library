@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -74,7 +75,6 @@ public class BookController {
             if (bindingResult.hasErrors()) {
                 return "books/edit";
             }
-
             Book savedBook = bookRepository.save(formBook);
             return "redirect:/books";
         } else {
@@ -93,6 +93,20 @@ public class BookController {
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Book with di " + id + " not found");
         }
+    }
+
+
+    @GetMapping("/warehouse")
+    public String warehouse(Model model) {
+        List<Book> totalBooksList = bookRepository.findAll();
+        List<Book> bookList = new ArrayList<>();
+        for (Book book : totalBooksList) {
+            if (book.getWarehouse() > 0) {
+                bookList.add(book);
+            }
+        }
+        model.addAttribute("bookList", bookList);
+        return "books/warehouse";
     }
 
 
