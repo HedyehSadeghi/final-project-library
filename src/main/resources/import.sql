@@ -6,3 +6,10 @@ INSERT INTO db_final_library.client_purchases( amount, `date`, price, book_id_id
 INSERT INTO db_final_library.client_purchases( amount, `date`, price, book_id_id)VALUES( 15, '2024-01-24', 160.32,2 );
 INSERT INTO db_final_library.client_purchases( amount, `date`, price, book_id_id)VALUES( 2, '2024-01-24', 40.1,1 );
 INSERT INTO db_final_library.client_purchases( amount, `date`, price, book_id_id)VALUES( 31, '2024-01-24', 450.23,2);
+
+INSERT INTO db_final_library.categories( name)VALUES('Bambini e Ragazzi');
+INSERT INTO db_final_library.categories( name)VALUES('Gialli e Thriller');
+INSERT INTO db_final_library.categories( name)VALUES('Narrativa Straniera');
+INSERT INTO db_final_library.categories( name)VALUES('Fantasia e Fantascienza');
+INSERT INTO db_final_library.categories( name)VALUES('Religione e Spiritualità');
+INSERT INTO db_final_library.categories( name)VALUES('Psicologia');

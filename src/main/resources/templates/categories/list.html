@@ -5,7 +5,7 @@
 <div class="container">
     <!-- Attributi:  List<Book> bookList-->
 
-    <h1 class="text-danger">Book List </h1>
+    <h1 class="text-danger">Category List </h1>
 
     <div th:if="${redirectMessage != null}"
          class="alert alert-success alert-dismissible fade show mt-4"
@@ -14,21 +14,19 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 
-    <div class="alert alert-info" th:if="${bookList.size() ==0}"> The list is empty</div>
+    <div class="alert alert-info" th:if="${categoryList.size() ==0}"> The list is empty</div>
 
-    <table class="table" th:unless="${bookList.size() ==0}">
+    <table class="table" th:unless="${categoryList.size() ==0}">
         <thead>
         <tr>
             <th scope="col">Title</th>
-            <th scope="col">Price</th>
             <th></th>
         </tr>
         </thead>
 
         <tbody>
-        <tr th:each="book: ${bookList}">
-            <td th:text="${book.title}"></td>
-            <td th:text="${book.price}"></td>
+        <tr th:each="category: ${categoryList}">
+            <td th:text="${category.name}"></td>
             <td class="d-flex justify-content-between">
                 <a class="btn btn-primary" th:href="@{/}" role="button">
                     Details </a>
@@ -46,13 +44,12 @@
     </table>
 
 
-    <a class="btn btn-success" th:href="@{/}" role="button">Add book</a>
+    <a class="btn btn-success" th:href="@{/}" role="button">Add category</a>
 
 
     <hr>
     <div class="d-flex justify-content-between">
-        <a class="btn btn-primary" th:href="@{/}" role="button">Home</a>
-        <a class="btn btn-primary" th:href="@{/categories}" role="button">Category list</a>
+        <a class="btn btn-primary" th:href="@{/}" role="button">Back to Home</a>
     </div>
 
 
