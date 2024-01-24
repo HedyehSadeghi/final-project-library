@@ -24,7 +24,12 @@ public class ClientPurchaseController {
         List<ClientPurchase> clientPurchaseList = clientPurchaseRepository.findAll();
         model.addAttribute("clientPurchaseList", clientPurchaseList);
         return "clients/purchaseslist";
+    }
 
-
+    @GetMapping("/create")
+    public String create(Model model) {
+        ClientPurchase clientPurchase = new ClientPurchase();
+        model.addAttribute("clientPurchase", clientPurchase);
+        return "clients/create";
     }
 }
