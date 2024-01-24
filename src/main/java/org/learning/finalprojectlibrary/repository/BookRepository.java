@@ -1,4 +1,7 @@
 package org.learning.finalprojectlibrary.repository;
 
-public interface BookRepository {
+import org.learning.finalprojectlibrary.model.Book;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookRepository extends JpaRepository<Book, Integer> {
 }
