@@ -39,6 +39,7 @@ public class BookController {
     public String create(Model model) {
         Book book = new Book();
         model.addAttribute("book", book);
+        model.addAttribute("categoryList", categoryRepository.findAll());
         return "books/create";
     }
 
