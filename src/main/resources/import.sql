@@ -13,3 +13,7 @@ INSERT INTO db_final_library.categories( name)VALUES('Narrativa Straniera');
 INSERT INTO db_final_library.categories( name)VALUES('Fantasia e Fantascienza');
 INSERT INTO db_final_library.categories( name)VALUES('Religione e Spiritualità');
 INSERT INTO db_final_library.categories( name)VALUES('Psicologia');
+
+INSERT INTO db_final_library.suppliers(name)VALUES('Mondadori');
+
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id_id, supplier_id_id)VALUES(50, '2023-12-20', 200.0, 2, 1);
