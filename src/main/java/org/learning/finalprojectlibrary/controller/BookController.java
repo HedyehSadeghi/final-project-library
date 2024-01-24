@@ -40,7 +40,7 @@ public class BookController {
         Book book = new Book();
         model.addAttribute("book", book);
         model.addAttribute("categoryList", categoryRepository.findAll());
-        return "books/create";
+        return "books/form";
     }
 
 
@@ -48,7 +48,7 @@ public class BookController {
     public String store(@Valid @ModelAttribute("book") Book formBook, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("categoryList", categoryRepository.findAll());
-            return "books/create";
+            return "books/form";
         }
         Book savedBook = bookRepository.save(formBook);
         return "redirect:/books";
@@ -62,7 +62,7 @@ public class BookController {
         if (result.isPresent()) {
             model.addAttribute("book", result.get());
             model.addAttribute("categoryList", categoryRepository.findAll());
-            return "books/edit";
+            return "books/form";
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Book with id " + id + " not found");
         }
@@ -74,7 +74,7 @@ public class BookController {
         if (result.isPresent()) {
             Book bookToEdit = result.get();
             if (bindingResult.hasErrors()) {
-                return "books/edit";
+                return "books/form";
             }
             Book savedBook = bookRepository.save(formBook);
             return "redirect:/books";
@@ -89,7 +89,7 @@ public class BookController {
         Optional<Book> result = bookRepository.findById(id);
         if (result.isPresent()) {
             Book book = result.get();
-            
+
             book.setClientPurchaseList(null);
             book.setSupplierBookPurchaseList(null);
             bookRepository.deleteById(id);

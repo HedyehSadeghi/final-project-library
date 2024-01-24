@@ -3,15 +3,16 @@
 <head th:replace="fragments/resources :: head('Book List')"></head>
 <body>
 <div class="container">
-
+    <!-- Attributi:  Book book -->
 
     <h1>Add a book </h1>
     <hr>
     <form
-            id="edit-book"
+            id="create-book"
             method="post"
             th:object="${book}"
-            th:action="@{/books/edit/{id}(id=${book.id})}"
+            th:with="actionUrl=${#strings.isEmpty(book.id) ? '/books/create' : '/books/edit/' + book.id}"
+            th:action="@{${actionUrl}}"
             class="row gy-3"
     >
         <div class="col-7">
@@ -75,6 +76,7 @@
 
     </form>
 </div>
+
 
 <th:block th:replace="fragments/resources :: script"></th:block>
 </body>
