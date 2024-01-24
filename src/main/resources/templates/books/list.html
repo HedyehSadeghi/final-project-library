@@ -32,10 +32,10 @@
             <td class="d-flex justify-content-around">
                 <a class="btn btn-primary" th:href="@{/}" role="button">
                     Details </a>
-                <a class="btn btn-primary" th:href="@{/}" role="button">
+                <a class="btn btn-primary" th:href="@{/books/edit/{id}(id=${book.id})}" role="button">
                     Edit </a>
                 <form
-                        th:action="@{/}"
+                        th:action="@{/books/delete/{id}(id=${book.id})}"
                         method="post"
                         onsubmit="return confirm('Are you sure?')">
                     <button type="submit" class="btn btn-danger"> Delete</button>
@@ -46,7 +46,7 @@
     </table>
 
 
-    <a class="btn btn-success" th:href="@{/}" role="button">Add book</a>
+    <a class="btn btn-success" th:href="@{/books/create}" role="button">Add book</a>
 
 
     <hr>
