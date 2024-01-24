@@ -20,6 +20,6 @@ public class ClientPurchaseController {
     public String index(Model model) {
         List<ClientPurchase> clientPurchaseList = clientPurchaseRepository.findAll();
         model.addAttribute("clientPurchaseList", clientPurchaseList);
-        return "pizzas/list";
+        return "clientPurchases/list";
     }
 }
