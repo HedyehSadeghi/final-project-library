@@ -11,15 +11,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/clientPurchases")
+@RequestMapping("/clients")
 public class ClientPurchaseController {
     @Autowired
     private ClientPurchaseRepository clientPurchaseRepository;
 
-    @GetMapping
+    @GetMapping("/purchases")
     public String index(Model model) {
         List<ClientPurchase> clientPurchaseList = clientPurchaseRepository.findAll();
         model.addAttribute("clientPurchaseList", clientPurchaseList);
-        return "clientPurchases/list";
+        return "clientpurchases/list";
+
+
     }
 }
