@@ -10,7 +10,8 @@
     <form
             id="category-create"
             method="post"
-            th:action="@{/categories/create}"
+            th:with="actionUrl=${#strings.isEmpty(formCategory.id) ? '/categories/create' : '/categories/edit/' + formCategory.id}"
+            th:action="@{${actionUrl}}"
             th:object="${formCategory}"
             class="row gy-2"
     >

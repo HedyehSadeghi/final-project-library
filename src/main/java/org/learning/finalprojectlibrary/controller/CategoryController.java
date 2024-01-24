@@ -34,13 +34,13 @@ public class CategoryController {
     @GetMapping("/create")
     public String create(Model model) {
         model.addAttribute("formCategory", new Category());
-        return "categories/create";
+        return "categories/form";
     }
 
     @PostMapping("/create")
     public String store(@Valid @ModelAttribute("formCategory") Category formCategory, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "categories/create";
+            return "categories/form";
         }
         categoryRepository.save(formCategory);
 
@@ -52,7 +52,7 @@ public class CategoryController {
         Optional<Category> result = categoryRepository.findById(id);
         if (result.isPresent()) {
             model.addAttribute("formCategory", result.get());
-            return "categories/edit";
+            return "categories/form";
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
                     "category with id " + id + " not found");
@@ -62,7 +62,7 @@ public class CategoryController {
     @PostMapping("/edit/{id}")
     public String update(@Valid @ModelAttribute("formCategory") Category formCategory, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "categories/edit";
+            return "categories/form";
         }
         categoryRepository.save(formCategory);
         return "redirect:/categories";
