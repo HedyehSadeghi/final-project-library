@@ -27,10 +27,10 @@ public class Book {
     @DecimalMin(value = "1.00")
     @Column(nullable = false)
     private BigDecimal price;
-    @OneToMany(mappedBy = "bookId")
-    private List<SupplierBookPurchase> supplierBookPurchaseList;
-    @OneToMany(mappedBy = "bookIdClient")
-    private List<ClientPurchase> clientPurchaseList;
+    @OneToMany(mappedBy = "book")
+    private List<SupplierBookPurchase> supplierPurchases;
+    @OneToMany(mappedBy = "book")
+    private List<ClientPurchase> clientPurchases;
     @ManyToMany(mappedBy = "bookList")
     @OnDelete(action = OnDeleteAction.CASCADE)
     List<Category> categoryList;
@@ -38,9 +38,9 @@ public class Book {
     public int getWarehouse() {
         int supplier = 0;
         int client = 0;
-        for (ClientPurchase clientPurchase : clientPurchaseList) {
+        for (ClientPurchase clientPurchase : clientPurchases) {
             supplier = clientPurchase.getAmount();
-            for (SupplierBookPurchase supplierBookPurchase : supplierBookPurchaseList) {
+            for (SupplierBookPurchase supplierBookPurchase : supplierPurchases) {
                 client = supplierBookPurchase.getAmount();
             }
         }
@@ -87,20 +87,20 @@ public class Book {
         this.price = price;
     }
 
-    public List<SupplierBookPurchase> getSupplierBookPurchaseList() {
-        return supplierBookPurchaseList;
+    public List<SupplierBookPurchase> getSupplierPurchases() {
+        return supplierPurchases;
     }
 
-    public void setSupplierBookPurchaseList(List<SupplierBookPurchase> supplierBookPurchaseList) {
-        this.supplierBookPurchaseList = supplierBookPurchaseList;
+    public void setSupplierPurchases(List<SupplierBookPurchase> supplierPurchases) {
+        this.supplierPurchases = supplierPurchases;
     }
 
-    public List<ClientPurchase> getClientPurchaseList() {
-        return clientPurchaseList;
+    public List<ClientPurchase> getClientPurchases() {
+        return clientPurchases;
     }
 
-    public void setClientPurchaseList(List<ClientPurchase> clientPurchaseList) {
-        this.clientPurchaseList = clientPurchaseList;
+    public void setClientPurchases(List<ClientPurchase> clientPurchases) {
+        this.clientPurchases = clientPurchases;
     }
 
     public List<Category> getCategoryList() {

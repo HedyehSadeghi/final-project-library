@@ -26,14 +26,14 @@ public class ClientPurchase {
     @NotNull(message = "Price must not be empty")
     private BigDecimal price;
     @ManyToOne
-    private Book bookIdClient;
+    private Book book;
 
-    public Book getBookIdClient() {
-        return bookIdClient;
+    public Book getBook() {
+        return book;
     }
 
-    public void setBookIdClient(Book bookIdClient) {
-        this.bookIdClient = bookIdClient;
+    public void setBook(Book book) {
+        this.book = book;
     }
 
     public Integer getId() {

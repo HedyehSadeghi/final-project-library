@@ -14,7 +14,7 @@ public class Supplier {
     @NotEmpty
     @Column(nullable = false)
     private String name;
-    @OneToMany(mappedBy = "supplierId")
+    @OneToMany(mappedBy = "supplier")
     private List<SupplierBookPurchase> supplierBookPurchaseList;
 
     public Integer getId() {

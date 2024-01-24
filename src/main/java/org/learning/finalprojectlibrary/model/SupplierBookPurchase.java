@@ -31,10 +31,10 @@ public class SupplierBookPurchase {
     private LocalDate date;
 
     @ManyToOne
-    private Book bookId;
+    private Book book;
 
     @ManyToOne
-    private Supplier supplierId;
+    private Supplier supplier;
 
 
     //GETTER E SETTER
@@ -71,20 +71,20 @@ public class SupplierBookPurchase {
         this.date = date;
     }
 
-    public Book getBookId() {
-        return bookId;
+    public Book getBook() {
+        return book;
     }
 
-    public void setBookId(Book bookId) {
-        this.bookId = bookId;
+    public void setBook(Book book) {
+        this.book = book;
     }
 
-    public Supplier getSupplierId() {
-        return supplierId;
+    public Supplier getSupplier() {
+        return supplier;
     }
 
-    public void setSupplierId(Supplier supplierId) {
-        this.supplierId = supplierId;
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
     }
 //METODI
 

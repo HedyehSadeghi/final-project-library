@@ -35,11 +35,17 @@
                 <a class="btn btn-primary" th:href="@{/books/edit/{id}(id=${book.id})}" role="button">
                     Edit </a>
                 <form
+                        th:if="${book.clientPurchases.size()==0 && book.supplierPurchases.size()==0}"
                         th:action="@{/books/delete/{id}(id=${book.id})}"
                         method="post"
                         onsubmit="return confirm('Are you sure?')">
                     <button type="submit" class="btn btn-danger"> Delete</button>
                 </form>
+                <button th:unless="${book.clientPurchases.size()==0 && book.supplierPurchases.size()==0}"
+                        class="btn btn-danger "
+                        disabled>
+                    Delete
+                </button>
             </td>
         </tr>
         </tbody>
