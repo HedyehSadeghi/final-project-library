@@ -18,6 +18,7 @@
     <table class="table" th:unless="${clientPurchaseList.size() ==0}">
         <thead>
         <tr>
+            <th scope="col">Book</th>
             <th scope="col">date</th>
             <th scope="col">amount</th>
             <th scope="col">Price</th>
@@ -27,6 +28,7 @@
 
         <tbody>
         <tr th:each="clp: ${clientPurchaseList}">
+            <td th:text="${clp.book.title}"></td>
             <td th:text="${clp.date}"></td>
             <td th:text="${clp.amount}"></td>
             <td th:text="|${clp.price} euro|"></td>
