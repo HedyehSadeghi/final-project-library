@@ -21,7 +21,6 @@
             <th scope="col">date</th>
             <th scope="col">amount</th>
             <th scope="col">Price</th>
-
             <th></th>
         </tr>
         </thead>
@@ -30,20 +29,25 @@
         <tr th:each="clp: ${clientPurchaseList}">
             <td th:text="${clp.date}"></td>
             <td th:text="${clp.amount}"></td>
-            <td th:text="${clp.price}"></td>
-
+            <td th:text="|${clp.price} euro|"></td>
             <td class="d-flex justify-content-between">
-                <a class="btn btn-primary" th:href="@{/}" role="button">
-                    Details </a>
-
+                <a class="btn btn-primary" th:href="@{/clients/edit-purchase/{id}(id=${clp.id})}"
+                   role="button">
+                    Edit </a>
+                <form
+                        th:action="@{/clients/delete-purchase/{id}(id=${clp.id})}"
+                        method="post"
+                        onsubmit="return confirm('Are you sure?')">
+                    <button type="submit" class="btn btn-danger"> Delete</button>
+                </form>
             </td>
         </tr>
         </tbody>
     </table>
     <hr>
     <div class="d-flex justify-content-between">
-        <a class="btn btn-primary" th:href="@{/books/list}" role="button">Book list</a>
-        <a class="btn btn-primary" th:href="@{/clients/create}" role="button">add purchase</a>
+        <a class="btn btn-primary" th:href="@{/books}" role="button">Book list</a>
+        <a class="btn btn-primary" th:href="@{/clients/create-purchase}" role="button">add purchase</a>
     </div>
 
 

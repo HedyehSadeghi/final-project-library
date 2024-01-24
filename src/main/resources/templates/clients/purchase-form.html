@@ -6,7 +6,13 @@
     <!-- Attributi: tipo dato ClientPurchase, nome:clientPurchase-->
     <h1>Fill the form to create a new purchase</h1>
 
-    <form id="create-purchase" th:object="${clientPurchase}" th:action="@{/clients/create}" method="post" class="row g-3">
+    <form
+            id="create-purchase"
+            th:object="${clientPurchase}"
+            th:with="actionUrl=${#strings.isEmpty(clientPurchase.id) ? '/clients/create-purchase' : '/clients/edit-purchase/' + clientPurchase.id}"
+            th:action="@{${actionUrl}}"
+            method="post"
+            class="row g-3">
 
         <div class="col-md-6">
             <label for="price" class="form-label">Price</label>
@@ -34,7 +40,7 @@
 
         <div class="col-md-12">
             <label for="amount" class="form-label">Amount</label>
-            <input class="form-control"  id="amount" th:field="*{amount}"
+            <input class="form-control" type="number"  id="amount" th:field="*{amount}"
                       th:errorClass="is-invalid"></input>
             <div class="invalid-feedback" th:if="${#fields.hasErrors('amount')}">
                 <ul>

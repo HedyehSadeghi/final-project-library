@@ -28,7 +28,7 @@
         <tbody>
         <tr th:each="book: ${bookList}">
             <td th:text="${book.title}"></td>
-            <td th:text="${book.price}"></td>
+            <td th:text="|${book.price} euro|"></td>
             <td class="d-flex justify-content-around">
                 <a class="btn btn-primary" th:href="@{/}" role="button">
                     Details </a>
