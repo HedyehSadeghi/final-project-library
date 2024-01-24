@@ -1,7 +1,7 @@
 package org.learning.finalprojectlibrary.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
@@ -13,13 +13,16 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Lob
     private String photo;
     @NotEmpty
+    @Column(nullable = false)
     private String title;
     @Lob
     private String description;
     @NotNull
-    @Min(1)
+    @DecimalMin(value = "1.00")
+    @Column(nullable = false)
     private BigDecimal price;
 
     public Integer getId() {
