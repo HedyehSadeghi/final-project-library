@@ -32,4 +32,5 @@ public class ClientPurchaseController {
         model.addAttribute("clientPurchase", clientPurchase);
         return "clients/create";
     }
+
 }

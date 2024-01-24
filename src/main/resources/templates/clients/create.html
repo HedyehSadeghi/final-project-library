@@ -6,7 +6,7 @@
     <!-- Attributi: tipo dato ClientPurchase, nome:clientPurchase-->
     <h1>Fill the form to create a new purchase</h1>
 
-    <form id="create-purchase" th:object="${purchase}" th:action="@{/clients/create}" method="post" class="row g-3">
+    <form id="create-purchase" th:object="${clientPurchase}" th:action="@{/clients/create}" method="post" class="row g-3">
 
         <div class="col-md-6">
             <label for="price" class="form-label">Price</label>
