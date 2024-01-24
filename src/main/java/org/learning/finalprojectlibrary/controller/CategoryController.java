@@ -18,7 +18,7 @@ public class CategoryController {
     private CategoryRepository categoryRepository;
 
     @GetMapping
-    private String index(Model model){
+    private String index(Model model) {
         List<Category> categoryList = categoryRepository.findAll();
         model.addAttribute("categoryList", categoryList);
         return "categories/list";
