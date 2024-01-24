@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -27,6 +29,23 @@ public class Book {
     private BigDecimal price;
     @OneToMany(mappedBy = "bookId")
     private List<SupplierBookPurchase> supplierBookPurchaseList;
+    @OneToMany(mappedBy = "bookIdClient")
+    private List<ClientPurchase> clientPurchaseList;
+    @ManyToMany(mappedBy = "bookList")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    List<Category> categoryList;
+
+    public int getWarehouse() {
+        int supplier = 0;
+        int client = 0;
+        for (ClientPurchase clientPurchase : clientPurchaseList) {
+            supplier = clientPurchase.getAmount();
+            for (SupplierBookPurchase supplierBookPurchase : supplierBookPurchaseList) {
+                client = supplierBookPurchase.getAmount();
+            }
+        }
+        return supplier - client;
+    }
 
     public Integer getId() {
         return id;
@@ -75,4 +94,21 @@ public class Book {
     public void setSupplierBookPurchaseList(List<SupplierBookPurchase> supplierBookPurchaseList) {
         this.supplierBookPurchaseList = supplierBookPurchaseList;
     }
+
+    public List<ClientPurchase> getClientPurchaseList() {
+        return clientPurchaseList;
+    }
+
+    public void setClientPurchaseList(List<ClientPurchase> clientPurchaseList) {
+        this.clientPurchaseList = clientPurchaseList;
+    }
+
+    public List<Category> getCategoryList() {
+        return categoryList;
+    }
+
+    public void setCategoryList(List<Category> categoryList) {
+        this.categoryList = categoryList;
+    }
+
 }
