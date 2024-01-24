@@ -25,17 +25,16 @@ public class ClientPurchase {
     @DecimalMin(value = "1.00", message = "Price can't be lower than 1.00")
     @NotNull(message = "Price must not be empty")
     private BigDecimal price;
-
-    public Book getBookId() {
-        return bookId;
-    }
-
-    public void setBookId(Book bookId) {
-        this.bookId = bookId;
-    }
-
     @ManyToOne
-    private Book bookId;
+    private Book bookIdClient;
+
+    public Book getBookIdClient() {
+        return bookIdClient;
+    }
+
+    public void setBookIdClient(Book bookIdClient) {
+        this.bookIdClient = bookIdClient;
+    }
 
     public Integer getId() {
         return id;
