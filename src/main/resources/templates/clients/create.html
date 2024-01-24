@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/resources :: head('create new purchase')"></head>
 <body>
@@ -8,28 +8,18 @@
 
     <form id="create-purchase" th:object="${purchase}" th:action="@{/clients/create}" method="post" class="row g-3">
 
-            <div class="col-md-6">
-                <label for="price" class="form-label">Price</label>
-                <input type="number" min="0" value="0" step=".01" class="form-control" id="price"
-                       th:field="*{price}"
-                       th:errorClass="is-invalid">
-                <div class="invalid-feedback" th:if="${#fields.hasErrors('price')}">
-                    <ul>
-                        <li th:each="err : ${#fields.errors('price')}" th:text="${err}"></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <label for="description" class="form-label">Amount</label>
-                <textarea class="form-control" rows="10" id="description" th:field="*{amount}"
-                          th:errorClass="is-invalid"></textarea>
-                <div class="invalid-feedback" th:if="${#fields.hasErrors('description')}">
-                    <ul>
-                        <li th:each="err : ${#fields.errors('description')}" th:text="${err}"></li>
-                    </ul>
-                </div>
+        <div class="col-md-6">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" min="0" value="0" step=".01" class="form-control" id="price"
+                   th:field="*{price}"
+                   th:errorClass="is-invalid">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('price')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('price')}" th:text="${err}"></li>
+                </ul>
             </div>
         </div>
+
         <div class="col-md-6">
             <label for="date" class="form-label">Date</label>
             <input type="date" class="form-control" id="date"
@@ -42,8 +32,22 @@
             </div>
         </div>
 
+        <div class="col-md-12">
+            <label for="amount" class="form-label">Amount</label>
+            <textarea class="form-control" rows="10" id="amount" th:field="*{amount}"
+                      th:errorClass="is-invalid"></textarea>
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('amount')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('amount')}" th:text="${err}"></li>
+                </ul>
+            </div>
+        </div>
 
+        <!-- Add the submit button or any other form elements here -->
+
+    </form>
 </div>
 <th:block th:replace="fragments/resources :: script"></th:block>
 </body>
+</html>
 </html>
