@@ -14,9 +14,11 @@ public class ClientPurchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(nullable = false)
     @NotNull(message = "cant be null")
     @PastOrPresent
-    private LocalDate data;
+    private LocalDate date;
+    @Column(nullable = false)
     @NotNull(message = "cant be null")
     private int amount;
     @Column(nullable = false)
@@ -32,12 +34,12 @@ public class ClientPurchase {
         this.id = id;
     }
 
-    public LocalDate getData() {
-        return data;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setData(LocalDate data) {
-        this.data = data;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     public int getAmount() {
@@ -56,3 +58,4 @@ public class ClientPurchase {
         this.price = price;
     }
 }
+
