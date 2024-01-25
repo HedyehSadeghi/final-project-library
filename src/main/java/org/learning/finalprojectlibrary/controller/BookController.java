@@ -83,6 +83,21 @@ public class BookController {
         }
     }
 
+    @GetMapping("/show/{id}")
+    public String show(@PathVariable Integer id, Model model){
+        Optional<Book> result = bookRepository.findById(id);
+        if (result.isPresent()){
+            Book book = result.get();
+            model.addAttribute("book", book);
+            return "books/show";
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
+    }
+
+
+
 
     @PostMapping("/delete/{id}")
     public String delete(@PathVariable Integer id, RedirectAttributes redirectAttributes) {

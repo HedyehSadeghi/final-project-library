@@ -46,7 +46,7 @@
         <div class="col-md-12">
             <label for="amount" class="form-label">Amount</label>
             <input class="form-control" type="number" id="amount" th:field="*{amount}"
-                   th:errorClass="is-invalid"></input>
+                   th:errorClass="is-invalid" min="1" max="1000000000">
             <div class="invalid-feedback" th:if="${#fields.hasErrors('amount')}">
                 <ul>
                     <li th:each="err : ${#fields.errors('amount')}" th:text="${err}"></li>
