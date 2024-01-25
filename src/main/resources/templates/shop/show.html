@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/resources :: head('Book List')"></head>
+<body>
+<nav th:replace="fragments/navbar :: topNavbar('admin')"></nav>
+<div class="container">
+    <!-- Attributi: Book book-->
+    <h1>Libro</h1>
+
+    <div class=" d-flex justify-content-between my-2 ">
+
+        <div class="card" style="width: 18rem;">
+            <img th:src="${book.photo}" class="card-img-top" alt="..." height="400rem">
+            <div class="card-body">
+                <a class="card-title d-flex justify-content-center text-decoration-none fw-bold"
+                   th:text="${book.title}"
+                   th:href="@{/shop/show/{id}(id=${book.id})}">Card
+                    title</a>
+                <div class="cc-content-rating">
+                    <div class="cc-rating-icons">
+                        <div class="cc-rating cc-rating--5">
+                                <span> <i class="fa-solid fa-star" style="color: #FFD43B;"></i><i
+                                        class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star"
+                                                                                                style="color: #FFD43B;"></i><i
+                                        class="fa-solid fa-star" style="color: #FFD43B;"></i><i
+                                        class="fa-regular fa-star-half-stroke" style="color: #FFD43B;"></i> (sono tutte bugie)
+                                </span>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" th:text="|${book.price} euro|"></li>
+            </ul>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="inputNumber1" class="input-number-label active">Amount</label>
+                    <div class="input-group input-number">
+                        <input type="number" class="form-control" data-bs-input id="inputNumber1"
+                               name="inputNumber1"
+                               value="1" step="any"/>
+                        <a class="btn btn-primary" th:href="@{/}" role="button">Buy now</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+</div>
+<th:block th:replace="fragments/resources :: script"></th:block>
+</body>
+</html>

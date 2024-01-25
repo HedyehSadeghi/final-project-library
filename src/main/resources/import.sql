@@ -4,6 +4,7 @@ INSERT INTO db_final_library.books(description, photo, price, title)VALUES('tale
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('tale about a wizard', 'https://m.media-amazon.com/images/I/71sH3vxziLL._AC_UF1000,1000_QL80_.jpg', 13, 'Harry Potter - Deathly Hallows');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('tale about a wizard', 'https://upload.wikimedia.org/wikipedia/en/7/70/Harry_Potter_and_the_Order_of_the_Phoenix.jpg', 14, 'Harry Potter - Order of Phoenix');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('tale about a wizard', 'https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/Harry_Potter_and_the_Half-Blood_Prince_cover.png/220px-Harry_Potter_and_the_Half-Blood_Prince_cover.png', 13, 'Harry Potter - Half-Blood Prince');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Agile software', 'https://m.media-amazon.com/images/I/51E2055ZGUL._SY466_.jpg', 29, 'Clean Code');
 
 --import client purchases--
 INSERT INTO db_final_library.client_purchases(amount, `date`, price, book_id)VALUES( 5, '2024-01-24', 76.80,1 );
