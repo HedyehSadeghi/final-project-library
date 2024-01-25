@@ -14,7 +14,7 @@
             method="post"
             class="row g-3">
 
-        <!-- <div class="col-4">
+        <div class="col-4">
             <label class="form-label" for="book">Book</label>
             <select id="book" class="form-select" th:field="*{book}">
                 <option value="" selected>Choose a book</option>
@@ -22,7 +22,7 @@
                         th:text="${book.title}"></option>
             </select>
         </div>
--->
+
         <div class="col-md-6">
             <label for="date" class="form-label">Date</label>
             <input type="date" class="form-control" id="date"
@@ -42,6 +42,17 @@
             <div class="invalid-feedback" th:if="${#fields.hasErrors('amount')}">
                 <ul>
                     <li th:each="err : ${#fields.errors('amount')}" th:text="${err}"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" min="0" value="0" step=".01" class="form-control" id="price"
+                   th:field="*{price}"
+                   th:errorClass="is-invalid">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('price')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('price')}" th:text="${err}"></li>
                 </ul>
             </div>
         </div>

@@ -4,7 +4,7 @@
 <body>
 <nav th:replace="fragments/navbar :: topNavbar('admin')"></nav>
 <div class="container">
-    <!-- Attributi:  Book book -->
+    <!-- Attributi:  Book book,   List<Category> categoryList-->
 
     <h1>Add a book </h1>
     <hr>
@@ -57,19 +57,18 @@
             </div>
         </div>
 
-        <div class="mb-3">
-            <label for="categoryList">Category</label>
-            <select id="categoryList" class="form-select" th:field="*{categoryList}" th:errorClass="is-invalid">
-                <option value="">--Choose type--</option>
-                <option th:each="category : ${categoryList}" th:text="${category.name}"
-                        th:value="${category.id}"></option>
-            </select>
-            <div class="invalid-feedback" th:if="${#fields.hasErrors('categoryList')}">
-                <ul>
-                    <li th:each="err : ${#fields.errors('categoryList')}" th:text="${err}"></li>
-                </ul>
+        <div class="col-4">
+            <h4>Categories</h4>
+            <div class="form-check" th:each="cat : ${categoryList}">
+                <input
+                        class="form-check-input"
+                        type="checkbox"
+                        th:value="${cat.id}"
+                        th:id="|cat-${cat.id}|"
+                        th:field="*{categoryList}"
+                >
+                <label class="form-check-label" th:for="|cat-${cat.id}|" th:text="${cat.name}"></label>
             </div>
-        </div>
         <div class="col-12 mt-4">
             <button type="submit" class="btn btn-primary mx-2">Save</button>
             <a class="btn btn-danger mx-2" th:href="@{/books}">Cancel</a>
