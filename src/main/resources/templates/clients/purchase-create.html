@@ -4,29 +4,25 @@
 <body>
 <nav th:replace="fragments/navbar :: topNavbar('admin')"></nav>
 <div class="container">
-    <!-- Attributi: tipo dato ClientPurchase, nome:clientPurchase-->
+    <!-- Attributi: ClientPurchase clientPurchase,    List<Book> bookList -->
     <h1>Fill the form to create a new purchase</h1>
 
     <form
             id="create-purchase"
             th:object="${clientPurchase}"
-            th:with="actionUrl=${#strings.isEmpty(clientPurchase.id) ? '/clients/create-purchase' : '/clients/edit-purchase/' + clientPurchase.id}"
-            th:action="@{${actionUrl}}"
+            th:action="@{/clients/create-purchase}"
             method="post"
             class="row g-3">
 
-        <div class="col-md-6">
-            <label for="price" class="form-label">Price</label>
-            <input type="number" min="0" value="0" step=".01" class="form-control" id="price"
-                   th:field="*{price}"
-                   th:errorClass="is-invalid">
-            <div class="invalid-feedback" th:if="${#fields.hasErrors('price')}">
-                <ul>
-                    <li th:each="err : ${#fields.errors('price')}" th:text="${err}"></li>
-                </ul>
-            </div>
+        <!-- <div class="col-4">
+            <label class="form-label" for="book">Book</label>
+            <select id="book" class="form-select" th:field="*{book}">
+                <option value="" selected>Choose a book</option>
+                <option th:each="book : ${bookList}" th:value="${book.id}"
+                        th:text="${book.title}"></option>
+            </select>
         </div>
-
+-->
         <div class="col-md-6">
             <label for="date" class="form-label">Date</label>
             <input type="date" class="form-control" id="date"
@@ -41,8 +37,8 @@
 
         <div class="col-md-12">
             <label for="amount" class="form-label">Amount</label>
-            <input class="form-control" type="number"  id="amount" th:field="*{amount}"
-                      th:errorClass="is-invalid"></input>
+            <input class="form-control" type="number" id="amount" th:field="*{amount}"
+                   th:errorClass="is-invalid">
             <div class="invalid-feedback" th:if="${#fields.hasErrors('amount')}">
                 <ul>
                     <li th:each="err : ${#fields.errors('amount')}" th:text="${err}"></li>
@@ -50,7 +46,7 @@
             </div>
         </div>
 
-        <!-- Add the submit button or any other form elements here -->
+
         <div class="col-12 mt-4">
             <button type="submit" class="btn btn-primary">Save</button>
             <a class="btn btn-primary" th:href="@{/clients/purchases}">Back to list</a>
