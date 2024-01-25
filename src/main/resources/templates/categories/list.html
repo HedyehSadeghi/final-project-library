@@ -28,14 +28,14 @@
         <tbody>
         <tr th:each="category: ${categoryList}">
             <td th:text="${category.name}"></td>
-            <td class="d-flex justify-content-around">
-                <a class="btn btn-primary" th:href="@{/categories/edit/{id}(id=${category.id})}" role="button">
+            <td class="d-flex justify-content-end">
+                <a class="btn btn-primary mx-2" th:href="@{/categories/edit/{id}(id=${category.id})}" role="button">
                     Edit </a>
                 <form
                         th:action="@{/categories/delete/{id}(id=${category.id})}"
                         method="post"
                         onsubmit="return confirm('Are you sure?')">
-                    <button type="submit" class="btn btn-danger"> Delete</button>
+                    <button type="submit" class="btn btn-danger mx-2"> Delete</button>
                 </form>
             </td>
         </tr>
@@ -43,12 +43,9 @@
     </table>
 
 
-    <a class="btn btn-success" th:href="@{/categories/create}" role="button">Add category</a>
-
-
-    <hr>
     <div class="d-flex justify-content-between">
-        <a class="btn btn-primary" th:href="@{/books}" role="button">Back to Books</a>
+        <a class="btn btn-primary" th:href="@{/books}" role="button">Book list</a>
+        <a class="btn btn-success" th:href="@{/categories/create}" role="button">Add category</a>
     </div>
 
 

@@ -30,36 +30,36 @@
         <tr th:each="book: ${bookList}">
             <td th:text="${book.title}"></td>
             <td th:text="|${book.price} euro|"></td>
-            <td class="d-flex justify-content-around">
-                <a class="btn btn-primary" th:href="@{/}" role="button">
+            <td class="d-flex justify-content-end">
+                <a class="btn btn-primary mx-2" th:href="@{/}" role="button">
                     Details </a>
-                <a class="btn btn-primary" th:href="@{/books/edit/{id}(id=${book.id})}" role="button">
+                <a class="btn btn-primary mx-2" th:href="@{/books/edit/{id}(id=${book.id})}" role="button">
                     Edit </a>
                 <form
                         th:if="${book.clientPurchases.size()==0 && book.supplierPurchases.size()==0}"
                         th:action="@{/books/delete/{id}(id=${book.id})}"
                         method="post"
                         onsubmit="return confirm('Are you sure?')">
-                    <button type="submit" class="btn btn-danger"> Delete</button>
+                    <button type="submit" class="btn btn-danger mx-2"> Delete</button>
+
                 </form>
                 <button th:unless="${book.clientPurchases.size()==0 && book.supplierPurchases.size()==0}"
-                        class="btn btn-danger "
+                        class="btn btn-danger mx-2 "
                         disabled>
                     Delete
                 </button>
+
             </td>
         </tr>
         </tbody>
     </table>
-
-
-    <a class="btn btn-success" th:href="@{/books/create}" role="button">Add book</a>
-
-
     <hr>
-    <div class="d-flex justify-content-between">
-        <a class="btn btn-primary" th:href="@{/}" role="button">Home</a>
-        <a class="btn btn-primary" th:href="@{/categories}" role="button">Category list</a>
+    <div class="d-flex justify-content-end">
+        <a class="btn btn-success mx-2" th:href="@{/books/create}" role="button">Add book</a>
+        <a class="btn btn-primary mx-2" th:href="@{/}" role="button">Home</a>
+        <a class="btn btn-primary mx-2" th:href="@{/categories}" role="button">Category list</a>
+        <a class="btn btn-primary mx-2" th:href="@{/clients/purchases}" role="button">Client purchases</a>
+
     </div>
 
 
