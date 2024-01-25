@@ -35,15 +35,18 @@ public class ClientPurchaseController {
     public String create(Model model) {
         ClientPurchase clientPurchase = new ClientPurchase();
         model.addAttribute("clientPurchase", clientPurchase);
-        return "clients/purchase-form";
+        model.addAttribute("bookList", bookRepository.findAll());
+
+        return "clients/purchase-create";
     }
 
     @PostMapping("/create-purchase")
     public String store(@Valid @ModelAttribute("clientPurchase") ClientPurchase formClientPurchase, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            return "clients/purchase-form";
+            model.addAttribute("bookList", bookRepository.findAll());
+            return "clients/purchase-create";
         }
-        ClientPurchase savedClientPurchase = clientPurchaseRepository.save(formClientPurchase);
+        clientPurchaseRepository.save(formClientPurchase);
         return "redirect:/clients/purchases";
     }
 
@@ -53,7 +56,7 @@ public class ClientPurchaseController {
         Optional<ClientPurchase> result = clientPurchaseRepository.findById(id);
         if (result.isPresent()) {
             model.addAttribute("clientPurchase", result.get());
-            return "clients/purchase-form";
+            return "clients/purchase-edit";
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "purchase with id " + id + " not found");
         }
@@ -62,7 +65,7 @@ public class ClientPurchaseController {
     @PostMapping("/edit-purchase/{id}")
     public String update(@PathVariable Integer id, @Valid @ModelAttribute("clientPurchase") ClientPurchase clientPurchaseForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "clients/purchase-form";
+            return "clients/purchase-edit";
         }
         clientPurchaseRepository.save(clientPurchaseForm);
         return "redirect:/clients/purchases";

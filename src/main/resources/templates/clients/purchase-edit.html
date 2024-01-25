@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/resources :: head('create new purchase')"></head>
+<body>
+<nav th:replace="fragments/navbar :: topNavbar('admin')"></nav>
+<div class="container">
+    <!-- Attributi: ClientPurchase clientPurchase -->
+    <h1>Fill the form to edit purchase</h1>
+
+    <form
+            id="edit-purchase"
+            th:object="${clientPurchase}"
+            th:action="@{/clients/edit-purchase/{id}(id=${clientPurchase.id})}"
+            method="post"
+            class="row g-3">
+
+
+        <div class="col-md-6 ">
+            <h4 th:text=" *{book.title}">  </h4>
+            <input th:field="*{book}" type="hidden">
+        </div>
+        <div class="col-md-6">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" min="0" value="0" step=".01" class="form-control" id="price"
+                   th:field="*{price}"
+                   th:errorClass="is-invalid">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('price')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('price')}" th:text="${err}"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date"
+                   th:field="*{date}"
+                   th:errorClass="is-invalid">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('date')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('date')}" th:text="${err}"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <label for="amount" class="form-label">Amount</label>
+            <input class="form-control" type="number" id="amount" th:field="*{amount}"
+                   th:errorClass="is-invalid"></input>
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('amount')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('amount')}" th:text="${err}"></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Add the submit button or any other form elements here -->
+        <div class="col-12 mt-4">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a class="btn btn-primary" th:href="@{/clients/purchases}">Back to list</a>
+        </div>
+    </form>
+</div>
+<th:block th:replace="fragments/resources :: script"></th:block>
+</body>
+</html>
+</html>
