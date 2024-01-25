@@ -5,6 +5,7 @@ import org.learning.finalprojectlibrary.model.ClientPurchase;
 import org.learning.finalprojectlibrary.repository.BookRepository;
 import org.learning.finalprojectlibrary.repository.ClientPurchaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,7 +27,7 @@ public class ClientPurchaseController {
 
     @GetMapping("/purchases")
     public String index(Model model) {
-        List<ClientPurchase> clientPurchaseList = clientPurchaseRepository.findAll();
+        List<ClientPurchase> clientPurchaseList = clientPurchaseRepository.findAll(Sort.by("date").descending());
         model.addAttribute("clientPurchaseList", clientPurchaseList);
         return "clients/purchases-list";
     }
