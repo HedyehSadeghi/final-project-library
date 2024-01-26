@@ -67,12 +67,14 @@
         </tr>
         </tbody>
     </table>
-    <div class="d-flex justify-content-start"><a class="btn btn-success mx-2" th:href="@{/books/create}" role="button">Add
+    <div class="d-flex justify-content-end"><a class="btn btn-success mx-2" th:href="@{/books/create}" role="button">Add
         book</a>
     </div>
 
 
 </div>
+
+<footer th:replace="fragments/footer :: footer"></footer>
 <th:block th:replace="fragments/resources :: script"></th:block>
 </body>
 </html>
