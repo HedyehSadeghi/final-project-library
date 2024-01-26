@@ -15,24 +15,22 @@
             class="row g-3">
 
 
-        <div class="col-md-6 ">
+        <div class="col-12">
             <h4 th:text=" *{book.title}">  </h4>
             <input th:field="*{book}" type="hidden">
             <input th:field="*{date}" type="hidden">
         </div>
 
 
-        <div class="col-md-12">
+        <div class="col-6">
+            <label class="form-label" for="amount">Amount</label>
+            <select id="amount" class="form-select" th:field="*{amount}" onchange="changePrice(event)">
+                <option value= "1" selected>1</option>
+                <option th:value= "2"> 2</option>
+                <option th:value= "3"> 3</option>
+                <option th:value= "4" >4</option>
+            </select>
 
-
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Choose amount
-                </button>
-                <ul class="dropdown-menu">
-                    <li ></li>
-                </ul>
-            </div>
 
             <!--
             <label for="amount" class="form-label">Amount</label>
@@ -50,7 +48,7 @@
 
         <div class="col-md-6">
             <span th:text="*{getPrice()}" id="price" class="visually-hidden"> </span>
-            <p> Prezzo totale: <span id="totalPrice"></span></p>
+            <p> Prezzo totale: <span id="totalPrice" th:text="*{getPrice()}"></span></p>
 
         </div>
 
