@@ -24,19 +24,33 @@
 
         <div class="col-md-12">
 
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Choose amount
+                </button>
+                <ul class="dropdown-menu">
+                    <li ></li>
+                </ul>
+            </div>
+
+            <!--
             <label for="amount" class="form-label">Amount</label>
             <input type="number" class="form-control" data-bs-input
                    name="inputNumber1"
                    value="1" step="any" id="amount" th:field="*{amount}"
-                   th:errorClass="is-invalid" min="1" max="1000000000" />
+                   th:errorClass="is-invalid" min="1" max="1000000000" oninput="changePrice(event)"/>
             <div class="invalid-feedback" th:if="${#fields.hasErrors('amount')}">
                 <ul>
                     <li th:each="err : ${#fields.errors('amount')}" th:text="${err}"></li>
                 </ul>
             </div>
+            -->
         </div>
 
         <div class="col-md-6">
+            <span th:text="*{getPrice()}" id="price" class="visually-hidden"> </span>
+            <p> Prezzo totale: <span id="totalPrice"></span></p>
 
         </div>
 
@@ -46,8 +60,9 @@
         </div>
     </form>
 </div>
-<th:block th:replace="fragments/resources :: script"></th:block>
 
+<script type="text/javascript"  th:src="@{/js/main.js}"></script>
+<th:block th:replace="fragments/resources :: script"></th:block>
 </body>
 </html>
 </html>
