@@ -1,8 +1,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-<nav th:fragment="topNavbar(area)" class="navbar navbar-expand-lg bg-primary navbar-dark">
+<nav th:fragment="topNavbar(area)" class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" th:href="@{/home}">Library</a>
+        <a class="navbar-brand" th:href="@{/}" style="font-size: 35px;">Library</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#top-navbar"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,6 +25,22 @@
                        th:href="@{/books}">Admin</a>
                 </li>
             </ul>
+
+        </div>
+        <div class="d-flex justify-content-end">
+            <form
+                    id="book-search"
+                    th:action="@{/}"
+                    method="get"
+
+            >
+                <div class="input-group">
+                    <input class="form-control rounded-4" type="text" name="keyword" id="keyword"
+                           placeholder="Search recipe by title" th:value="${preloadSearch}">
+                    <button type="submit" id="search-button" class="btn btn-secondary rounded-4 mx-2"> Search</button>
+                </div>
+            </form>
+
         </div>
     </div>
 </nav>

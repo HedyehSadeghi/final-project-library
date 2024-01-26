@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/resources :: head('Book List')"></head>
+
+
 <body class="bg-secondary">
 <nav th:replace="fragments/navbar :: topNavbar('')"></nav>
-<form class="d-flex p-4 ms-5 me-5" role="search">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-light" type="submit">Search</button>
-</form>
+
+<!-- Attributi : List<Book> bookList,  String preloadSearch-->
+
 <div class="container bg-dark">
     <div class="row d-flex justify-content-center">
         <div class="col-8 d-flex justify-content-center">
