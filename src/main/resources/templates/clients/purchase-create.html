@@ -46,8 +46,8 @@
             </div>
         </div>
         <div class="col-md-6">
-            <label for="price" class="form-label">Price</label>
-            <input type="number" min="0" value="0" step=".01" class="form-control" id="price"
+            <label class="form-label">Price</label>
+            <input type="hidden"
                    th:field="*{price}"
                    th:errorClass="is-invalid">
             <div class="invalid-feedback" th:if="${#fields.hasErrors('price')}">

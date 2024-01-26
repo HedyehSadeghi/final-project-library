@@ -18,6 +18,7 @@
         <div class="col-md-6 ">
             <h4 th:text=" *{book.title}">  </h4>
             <input th:field="*{book}" type="hidden">
+            <input th:field="*{date}" type="hidden">
         </div>
 
 
@@ -36,13 +37,12 @@
         </div>
 
         <div class="col-md-6">
-            <p >Price:  <span  th:field="*{book.price}" th:text="*{book.price}"> </span></p>
 
         </div>
 
         <div class="col-12 mt-4">
             <button type="submit" class="btn btn-primary">Save</button>
-            <a class="btn btn-primary" th:href="@{/clients/purchases}">Back to list</a>
+            <a class="btn btn-primary" th:href="@{/shop}">Back to list</a>
         </div>
     </form>
 </div>

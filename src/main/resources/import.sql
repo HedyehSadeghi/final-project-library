@@ -7,13 +7,13 @@ INSERT INTO db_final_library.books(description, photo, price, title)VALUES('tale
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Agile software', 'https://m.media-amazon.com/images/I/51E2055ZGUL._SY466_.jpg', 29, 'Clean Code');
 
 --import client purchases--
-INSERT INTO db_final_library.client_purchases(amount, `date`, price, book_id)VALUES( 5, '2024-01-24', 76.80,1 );
-INSERT INTO db_final_library.client_purchases(amount, `date`, price, book_id)VALUES( 15, '2024-01-24', 160.32,2 );
-INSERT INTO db_final_library.client_purchases(amount, `date`, price, book_id)VALUES( 2, '2024-01-24', 40.1,1 );
-INSERT INTO db_final_library.client_purchases(amount, `date`, price, book_id)VALUES( 31, '2024-01-24', 450.23,2);
-INSERT INTO db_final_library.client_purchases(amount, `date`, price, book_id)VALUES( 14, '2024-01-20', 500,4);
-INSERT INTO db_final_library.client_purchases(amount, `date`, price, book_id)VALUES( 29, '2024-01-19', 260,5);
-INSERT INTO db_final_library.client_purchases(amount, `date`, price, book_id)VALUES( 39, '2024-01-18', 400,1);
+INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 5, '2024-01-24',1 );
+INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 15, '2024-01-24', 2 );
+INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 2, '2024-01-24', 1 );
+INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 31, '2024-01-24',2);
+INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 14, '2024-01-20', 4);
+INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 29, '2024-01-19', 5);
+INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 39, '2024-01-18',1);
 
 
 --import categories--

@@ -1,5 +1,6 @@
 package org.learning.finalprojectlibrary.controller;
 
+import jakarta.validation.Valid;
 import org.learning.finalprojectlibrary.model.Book;
 import org.learning.finalprojectlibrary.model.ClientPurchase;
 import org.learning.finalprojectlibrary.repository.BookRepository;
@@ -9,12 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,7 +58,7 @@ public class ShopController {
             Book book = result.get();
             clientPurchase.setBook(book);
             clientPurchase.setAmount(1);
-            clientPurchase.setPrice(book.getPrice());
+            clientPurchase.setDate(LocalDate.now());
             model.addAttribute("clientPurchase", clientPurchase);
             return "shop/buy-now";
         } else {
@@ -67,11 +68,15 @@ public class ShopController {
 
     }
 
-    @PostMapping("")
-    public String storePurchase() {
+    @PostMapping("/buy/{id}")
+    public String storePurchase(@Valid @ModelAttribute ClientPurchase clientPurchaseForm, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+        if (bindingResult.hasErrors()) {
+            return "shop/buy-now";
+        }
 
-
-        return "";
+        clientPurchaseRepository.save(clientPurchaseForm);
+        redirectAttributes.addFlashAttribute("redirectMessage", "Congratz, you successfully bought " + clientPurchaseForm.getBook().getTitle());
+        return "redirect:/shop";
     }
 
 

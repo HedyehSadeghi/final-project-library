@@ -32,7 +32,7 @@
             <td th:text="${clp.book.title}"></td>
             <td th:text="${clp.date}"></td>
             <td th:text="${clp.amount}"></td>
-            <td th:text="|${clp.price} euro|"></td>
+            <td th:text="|${clp.getPrice()} euro|"></td>
             <td class="d-flex justify-content-end">
                 <a class="btn btn-primary mx-2" th:href="@{/clients/edit-purchase/{id}(id=${clp.id})}" role="button">Edit </a>
 
