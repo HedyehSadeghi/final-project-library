@@ -38,11 +38,11 @@ public class Book {
     public int getWarehouse() {
         int supplier = 0;
         int client = 0;
+        for (SupplierBookPurchase supplierBookPurchase : supplierPurchases) {
+            supplier += supplierBookPurchase.getAmount();
+        }
         for (ClientPurchase clientPurchase : clientPurchases) {
-            supplier = clientPurchase.getAmount();
-            for (SupplierBookPurchase supplierBookPurchase : supplierPurchases) {
-                client = supplierBookPurchase.getAmount();
-            }
+            client += clientPurchase.getAmount();
         }
         return supplier - client;
     }
