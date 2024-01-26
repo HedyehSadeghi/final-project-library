@@ -1,14 +1,51 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/resources :: head('Book List')"></head>
-<body>
-<nav th:replace="fragments/navbar :: topNavbar('admin')"></nav>
-<div class="container">
-    
-    <h1> hello </h1>
-
-
+<body class="bg-secondary">
+<nav th:replace="fragments/navbar :: topNavbar('')"></nav>
+<div class="container d-flex justify-content-center">
+    <div class="row">
+        <div class="col-12 d-flex ms-auto p-4 ">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
 </div>
+<div class="container d-flex justify-content-center bg-dark">
+    <div class="row">
+        <div class="col">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://www.ibs.it/assets/2020/12/20201210114635-libro-5-.jpg" class="d-block w-50"
+                             alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.ibs.it/assets/2020/12/20201210114823-libro-2-.jpg" class="d-block w-50"
+                             alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://chiediloallorango.files.wordpress.com/2018/12/Fidanzati-dellinverno.-Lattraversaspecchi-Christelle-Dabos.jpg?w=691"
+                             class="d-block w-50" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <th:block th:replace="fragments/resources :: script"></th:block>
 </body>
 </html>
