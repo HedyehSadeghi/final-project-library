@@ -47,8 +47,8 @@ INSERT INTO db_final_library.suppliers(name)VALUES('Bompiani');
 
 
 --import supplier-book-purchases --
-INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(50, '2023-12-20', 200.0, 2, 1);
-INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(50, '2023-12-10', 200.0, 1, 1);
-INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(50, '2023-12-13', 200.0, 1, 1);
-INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(50, '2023-12-11', 200.0, 2, 1);
-INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(50, '2023-12-29', 200.0, 2, 1);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(50, '2023-12-20', 399, 2, 1);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(70, '2023-12-10', 588.6, 1, 1);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(50, '2023-12-13', 325, 1, 1);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(149, '2023-12-11', 1189.02, 2, 1);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(50, '2023-12-29', 325, 2, 1);

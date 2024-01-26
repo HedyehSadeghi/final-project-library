@@ -6,7 +6,21 @@
 <div class="container">
     <!-- Attributi:  List<Book> bookList-->
 
-    <h1 class="text-danger">Book List </h1>
+
+    <div class="dropdown my-4">
+        <a class="btn btn-info btn-lg dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+           aria-expanded="false">
+            Book List
+        </a>
+
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" th:href="@{/books/warehouse}">Warehouse</a></li>
+            <li><a class="dropdown-item" th:href="@{/categories}">Category List</a></li>
+            <li><a class="dropdown-item" th:href="@{/clients/purchases}">Client purchases</a></li>
+            <li><a class="dropdown-item" th:href="@{/suppliers/purchases}">Supplier purchases</a></li>
+        </ul>
+    </div>
+
 
     <div th:if="${redirectMessage != null}"
          class="alert alert-success alert-dismissible fade show mt-4"
@@ -53,15 +67,8 @@
         </tr>
         </tbody>
     </table>
-    <div class="d-flex justify-content-start"><a class="btn btn-success mx-2" th:href="@{/books/create}" role="button">Add book</a></div>
-    <hr>
-    <div class="d-flex justify-content-end">
-
-        <a class="btn btn-primary mx-2" th:href="@{/books/warehouse}" role="button">Warehouse</a>
-        <a class="btn btn-primary mx-2" th:href="@{/categories}" role="button">Category list</a>
-        <a class="btn btn-primary mx-2" th:href="@{/clients/purchases}" role="button">Client purchases</a>
-        <a class="btn btn-primary mx-2" th:href="@{/suppliers/purchases}" role="button">Suppliers purchases</a>
-
+    <div class="d-flex justify-content-start"><a class="btn btn-success mx-2" th:href="@{/books/create}" role="button">Add
+        book</a>
     </div>
 
 

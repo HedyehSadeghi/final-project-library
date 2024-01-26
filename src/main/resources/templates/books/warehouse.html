@@ -6,7 +6,19 @@
 <div class="container">
     <!-- Attributi:  List<Book> bookList -->
 
-    <h1 class="text-danger">Warehouse</h1>
+    <div class="dropdown my-4">
+        <a class="btn btn-info btn-lg dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+           aria-expanded="false">
+            Warehouse
+        </a>
+
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" th:href="@{/books}">Book List</a></li>
+            <li><a class="dropdown-item" th:href="@{/categories}">Category List</a></li>
+            <li><a class="dropdown-item" th:href="@{/clients/purchases}">Client Purchases</a></li>
+            <li><a class="dropdown-item" th:href="@{/suppliers/purchases}">Supplier purchases</a></li>
+        </ul>
+    </div>
 
     <div th:if="${redirectMessage != null}"
          class="alert alert-success alert-dismissible fade show mt-4"
@@ -46,13 +58,6 @@
 
 
     <a class="btn btn-success" th:href="@{/}" role="button">Add book</a>
-
-
-    <hr>
-    <div class="d-flex justify-content-between">
-        <a class="btn btn-primary" th:href="@{/books}" role="button">Book list</a>
-        <a class="btn btn-primary" th:href="@{/categories}" role="button">Category list</a>
-    </div>
 
 
 </div>
