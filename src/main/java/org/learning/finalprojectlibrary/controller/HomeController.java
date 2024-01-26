@@ -11,4 +11,9 @@ public class HomeController {
     private String home() {
         return "home/landing-page";
     }
+
+    @GetMapping()
+    private String index() {
+        return "home/landing-page";
+    }
 }
