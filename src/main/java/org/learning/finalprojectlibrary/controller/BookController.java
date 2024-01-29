@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -84,9 +83,9 @@ public class BookController {
     }
 
     @GetMapping("/show/{id}")
-    public String show(@PathVariable Integer id, Model model){
+    public String show(@PathVariable Integer id, Model model) {
         Optional<Book> result = bookRepository.findById(id);
-        if (result.isPresent()){
+        if (result.isPresent()) {
             Book book = result.get();
             model.addAttribute("book", book);
             return "books/show";
@@ -95,8 +94,6 @@ public class BookController {
         }
 
     }
-
-
 
 
     @PostMapping("/delete/{id}")
@@ -119,13 +116,24 @@ public class BookController {
     @GetMapping("/warehouse")
     public String warehouse(Model model) {
         List<Book> totalBooksList = bookRepository.findAll();
+        /*
         List<Book> bookList = new ArrayList<>();
         for (Book book : totalBooksList) {
             if (book.getWarehouse() > 0) {
                 bookList.add(book);
             }
         }
-        model.addAttribute("bookList", bookList);
+
+        List<Book> notAvailableBooks = new ArrayList<>();
+        for (Book book: totalBooksList){
+            if (book.getWarehouse()<0){
+                notAvailableBooks.add(book);
+            }
+        }
+
+         */
+
+        model.addAttribute("bookList", totalBooksList);
         return "books/warehouse";
     }
 
