@@ -20,7 +20,12 @@ INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horr
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by Michael McDowell','https://www.ibs.it/images/9788854529199_0_424_0_75.jpg',14.90,'Gli aghi d\'oro');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by Jason Rekulak ','https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/91puw8POkwL._SY466_.jpg',14.90,'Hidden Pictures: A Novel');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by Richard Matheson','https://www.ibs.it/images/9788804723974_0_536_0_75.jpg',12.82,'I am legend');
-
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/I/71bVExi4yXL._AC_UF1000,1000_QL80_.jpg',33.00,'The body keeps the score');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71GigAO92UL._SY466_.jpg',15.06,'La dittatura delle abitudini');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/I/714XmrShddL._SY466_.jpg',14.90,'L\'interpretazione dei sogni');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/I/71nKh1RtZwL._SY466_.jpg',23.65,'Il libro della psicologia. Grandi idee spiegate in modo semplice');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/I/61KeJ47L0HL._SY466_.jpg',14.97,'Psicologia Nera');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/I/611WMa73OiL._SY466_.jpg',38.00,'Come sono fatte le emozioni. La vita segreta del cervello');
 
 --import client purchases--
 INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 5, '2024-01-24',1 );
