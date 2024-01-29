@@ -21,9 +21,10 @@ public class HomeController {
 
     @GetMapping()
     private String index(Model model) {
-        List<Book> bookList = bookRepository.findAll(Sort.by("ClientPurchases").descending());
+        List<Book> bookListTop5 = bookRepository.findAll(Sort.by("ClientPurchases").descending());
+        bookListTop5 = bookListTop5.subList(0, 5);
 
-        model.addAttribute("bookList", bookList);
+        model.addAttribute("bookListTop5", bookListTop5);
 
         return "home/landing-page";
     }

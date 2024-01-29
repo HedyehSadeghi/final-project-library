@@ -5,7 +5,7 @@
 <body class="bg-secondary">
 <nav th:replace="fragments/navbar :: topNavbar('')"></nav>
 
-<!-- Attributi : List<Book> bookList,  String preloadSearch-->
+<!-- Attributi : List<Book> bookListTop5,  String preloadSearch-->
 
 <div class="bg-dark">
     <div class="row d-flex justify-content-center">
@@ -70,7 +70,8 @@
         </div>
 
         <div class="row">
-            <div class="col-2 my-2 " th:each="book: ${bookList}">
+            <h1> Top 5 </h1>
+            <div class="col-2 my-2 " th:each="book: ${bookListTop5}">
                 <div class="card" style="width: 18rem;">
                     <img th:src="${book.photo}" class="card-img-top" alt="..." height="280rem">
                     <div class="card-body">
