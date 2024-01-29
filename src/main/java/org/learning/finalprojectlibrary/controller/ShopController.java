@@ -31,8 +31,13 @@ public class ShopController {
     private ClientPurchaseRepository clientPurchaseRepository;
 
     @GetMapping
-    public String shop(Model model) {
-        List<Book> shopList = bookRepository.findAll();
+    public String shop(@RequestParam(name = "keyword", required = false) String searchKeyword, Model model) {
+        List<Book> shopList;
+        if (searchKeyword != null) {
+            shopList = bookRepository.findByTitleContaining(searchKeyword);
+        } else {
+            shopList = bookRepository.findAll();
+        }
         model.addAttribute("shopList", shopList);
         return "shop/list";
     }

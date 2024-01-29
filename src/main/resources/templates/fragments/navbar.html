@@ -30,13 +30,13 @@
         <div class="d-flex justify-content-end">
             <form
                     id="book-search"
-                    th:action="@{/}"
+                    th:action="@{/shop}"
                     method="get"
 
             >
                 <div class="input-group">
                     <input class="form-control rounded-4" type="text" name="keyword" id="keyword"
-                           placeholder="Search recipe by title" th:value="${preloadSearch}">
+                           placeholder="Search book by title" th:value="${preloadSearch}">
                     <button type="submit" id="search-button" class="btn btn-secondary rounded-4 mx-2"> Search</button>
                 </div>
             </form>

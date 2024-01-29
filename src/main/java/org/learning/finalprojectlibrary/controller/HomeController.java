@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -21,16 +20,11 @@ public class HomeController {
 
 
     @GetMapping()
-    private String index(@RequestParam(name = "keyword", required = false) String searchKeyword, Model model) {
-        List<Book> bookList;
+    private String index(Model model) {
+        List<Book> bookListTop5 = bookRepository.findAll(Sort.by("ClientPurchases").descending());
+        bookListTop5 = bookListTop5.subList(0, 5);
 
-        if (searchKeyword != null) {
-            bookList = bookRepository.findByTitleContaining(searchKeyword);
-        } else {
-            bookList = bookRepository.findAll(Sort.by("ClientPurchases").descending());
-        }
-        model.addAttribute("bookList", bookList);
-        model.addAttribute("preloadSearch", searchKeyword);
+        model.addAttribute("bookListTop5", bookListTop5);
 
         return "home/landing-page";
     }

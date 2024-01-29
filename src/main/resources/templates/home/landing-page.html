@@ -5,12 +5,12 @@
 <body class="bg-secondary">
 <nav th:replace="fragments/navbar :: topNavbar('')"></nav>
 
-<!-- Attributi : List<Book> bookList,  String preloadSearch-->
+<!-- Attributi : List<Book> bookListTop5,-->
 
-<div class="container bg-dark">
+<div class="bg-dark">
     <div class="row d-flex justify-content-center">
         <!-- First Carousel -->
-        <div class="col-8 d-flex justify-content-center">
+        <div class="col-10 d-flex justify-content-center">
             <div id="carouselExampleControls" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -68,6 +68,35 @@
                 </button>
             </div>
         </div>
+
+        <div class="row">
+            <h1> Top 5 </h1>
+            <div class="col-2 my-2 " th:each="book: ${bookListTop5}">
+                <div class="card" style="width: 18rem;">
+                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="280rem">
+                    <div class="card-body">
+                        <a class="card-title d-flex justify-content-center text-decoration-none fw-bold"
+                           th:text="${book.title}"
+                           th:href="@{/shop/show/{id}(id=${book.id})}">Card
+                            title</a>
+                        <div class="cc-content-rating">
+                            <div class="cc-rating-icons">
+                                <div class="cc-rating cc-rating--5">
+                                <span> <i class="fa-solid fa-star" style="color: #FFD43B;"></i><i
+                                        class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star"
+                                                                                                style="color: #FFD43B;"></i><i
+                                        class="fa-solid fa-star" style="color: #FFD43B;"></i><i
+                                        class="fa-regular fa-star-half-stroke" style="color: #FFD43B;"></i>
+                                </span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+
 
     </div>
 </div>

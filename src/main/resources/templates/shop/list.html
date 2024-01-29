@@ -5,7 +5,7 @@
 <body>
 <nav th:replace="fragments/navbar :: topNavbar('shop')"></nav>
 <div class="container">
-    <!-- Attributi:  List<Book> shopList-->
+    <!-- Attributi:  List<Book> shopList,   String preloadSearch-->
 
     <div class="row">
 
@@ -21,38 +21,49 @@
 
 
         <div class="alert alert-info" th:if="${shopList.size() ==0}"> The list is empty</div>
-        <div class=" col-2 d-flex flex-column flex-shrink-0 p-3 bg-light"> <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item">
-                <a href="#" class="nav-link active" aria-current="page">
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-                    Dashboard
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-                    Orders
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-                    Products
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-                    Customers
-                </a>
-            </li>
-        </ul>
+        <div class=" col-2 d-flex flex-column flex-shrink-0 p-3 bg-light">
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" aria-current="page">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#home"></use>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link link-dark">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#speedometer2"></use>
+                        </svg>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link link-dark">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#table"></use>
+                        </svg>
+                        Orders
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link link-dark">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#grid"></use>
+                        </svg>
+                        Products
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link link-dark">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#people-circle"></use>
+                        </svg>
+                        Customers
+                    </a>
+                </li>
+            </ul>
         </div>
         <div class="col-10 d-flex justify-content-between flex-wrap">
             <div class="col-4 my-2 " th:each="book: ${shopList}">
