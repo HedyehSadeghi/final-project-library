@@ -13,7 +13,14 @@ INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Youn
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Children\'s novel','https://m.media-amazon.com/images/I/711cPWrJXRL._AC_UF1000,1000_QL80_.jpg',29.90,'Alice\'s adventures in Wonderland');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Mystery thriller novel','https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1463592438i/30228538.jpg',14.72,'The Da Vinci code');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Post-apocalyptic novel','https://www.ibs.it/images/9788858831939_0_536_0_75.jpg',11.40,'Cecità');
-INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Bildungsroman','https://emonsaudiolibri.it/media/images/cover/lamica-geniale-201.jpg',18.05,'L\'amica geniale');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by Stephen King','https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/It_%281986%29_front_cover%2C_first_edition.jpg/800px-It_%281986%29_front_cover%2C_first_edition.jpg',17.95,'It');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by Bram Stoker','https://m.media-amazon.com/images/I/61w70l39W9L._AC_UF1000,1000_QL80_.jpg',17.10,'Dracula');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by H.P.Lovecraft','https://m.media-amazon.com/images/I/71HrG7nN14L._AC_UF1000,1000_QL80_.jpg',5.60,'Call of Cthulhu');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by Mary Shelley','https://www.newtoncompton.com/files/cache/bookimages/17250/frankenstein-x1000.jpg',8.08,'Frankenstein');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by Michael McDowell','https://www.ibs.it/images/9788854529199_0_424_0_75.jpg',14.90,'Gli aghi d\'oro');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by Jason Rekulak ','https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/91puw8POkwL._SY466_.jpg',14.90,'Hidden Pictures: A Novel');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by Richard Matheson','https://www.ibs.it/images/9788804723974_0_536_0_75.jpg',12.82,'I am legend');
+
 
 --import client purchases--
 INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 5, '2024-01-24',1 );
