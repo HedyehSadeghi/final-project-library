@@ -16,7 +16,7 @@
             th:action="@{${actionUrl}}"
             class="row gy-3"
     >
-        <div class="col-7">
+        <div class="col-12">
             <label class="form-label" for="title">Title</label>
             <input class="form-control" type="text" id="title" th:field="*{title}"
                    th:errorClass="is-invalid">
@@ -26,7 +26,8 @@
                 </ul>
             </div>
         </div>
-        <div class="col-7">
+
+        <div class="col-12">
             <label class="form-label" for="photo">URL</label>
             <input class="form-control" type="text" id="photo" th:field="*{photo}"
                    th:errorClass="is-invalid">
@@ -36,7 +37,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-7">
+        <div class="col-12">
             <label class="form-label" for="description">Description</label>
             <input class="form-control" type="text" id="description" th:field="*{description}"
                    th:errorClass="is-invalid">
@@ -46,7 +47,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-7">
+        <div class="col-3">
             <label class="form-label" for="price">Price</label>
             <input class="form-control" type="text" id="price" th:field="*{price}"
                    th:errorClass="is-invalid">
@@ -56,8 +57,7 @@
                 </ul>
             </div>
         </div>
-
-        <div class="col-4">
+        <div class="col-12">
             <h4>Categories</h4>
             <div class="form-check" th:each="cat : ${categoryList}">
                 <input
@@ -69,10 +69,13 @@
                 >
                 <label class="form-check-label" th:for="|cat-${cat.id}|" th:text="${cat.name}"></label>
             </div>
-        <div class="col-12 mt-4">
-            <button type="submit" class="btn btn-primary mx-2">Save</button>
-            <a class="btn btn-danger mx-2" th:href="@{/books}">Cancel</a>
         </div>
+
+
+            <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-primary mx-2">Save</button>
+                <a class="btn btn-danger mx-2" th:href="@{/books}">Cancel</a>
+            </div>
 
     </form>
 </div>
