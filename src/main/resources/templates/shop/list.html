@@ -21,20 +21,27 @@
 
 
         <div class="alert alert-info" th:if="${shopList.size() ==0}"> The list is empty</div>
+        <div>
+            <div class="form-check col-8">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                </label>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between flex-wrap">
+            <div class="col-4 my-2 " th:each="book: ${shopList}">
 
-
-        <div class="col-4 d-flex justify-content-between my-2 " th:each="book: ${shopList}">
-
-            <div th:unless="${shopList.size() ==0}" class="card" style="width: 18rem;">
-                <img th:src="${book.photo}" class="card-img-top" alt="..." height="400rem">
-                <div class="card-body">
-                    <a class="card-title d-flex justify-content-center text-decoration-none fw-bold"
-                       th:text="${book.title}"
-                       th:href="@{/shop/show/{id}(id=${book.id})}">Card
-                        title</a>
-                    <div class="cc-content-rating">
-                        <div class="cc-rating-icons">
-                            <div class="cc-rating cc-rating--5">
+                <div th:unless="${shopList.size() ==0}" class="card" style="width: 18rem;">
+                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="400rem">
+                    <div class="card-body">
+                        <a class="card-title d-flex justify-content-center text-decoration-none fw-bold"
+                           th:text="${book.title}"
+                           th:href="@{/shop/show/{id}(id=${book.id})}">Card
+                            title</a>
+                        <div class="cc-content-rating">
+                            <div class="cc-rating-icons">
+                                <div class="cc-rating cc-rating--5">
                                 <span> <i class="fa-solid fa-star" style="color: #FFD43B;"></i><i
                                         class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star"
                                                                                                 style="color: #FFD43B;"></i><i
@@ -42,22 +49,22 @@
                                         class="fa-regular fa-star-half-stroke" style="color: #FFD43B;"></i> (sono tutte bugie)
                                 </span>
 
+                                </div>
                             </div>
                         </div>
+
                     </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" th:text="|${book.price} euro|"></li>
+                    </ul>
+                    <div class="card-body">
+                        <a class="btn btn-primary" th:href="@{/shop/buy/{id}(id=${book.id})}" role="button">Buy now</a>
 
+                    </div>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item" th:text="|${book.price} euro|"></li>
-                </ul>
-                <div class="card-body">
-                    <a class="btn btn-primary" th:href="@{/shop/buy/{id}(id=${book.id})}" role="button">Buy now</a>
 
-                </div>
             </div>
-
         </div>
-
 
     </div>
 
