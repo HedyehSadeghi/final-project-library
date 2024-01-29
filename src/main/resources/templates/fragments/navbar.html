@@ -1,8 +1,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-<nav th:fragment="topNavbar(area)" class="navbar navbar-expand-lg bg-primary navbar-dark">
+<nav th:fragment="topNavbar(area)" class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" th:href="@{/home}">Library</a>
+        <a class="navbar-brand" th:href="@{/}" style="font-size: 35px;">Library</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#top-navbar"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,18 +24,23 @@
                        th:classappend="${area == 'admin' ? 'active' : ''}"
                        th:href="@{/books}">Admin</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link"
-                       th:classappend="${area == 'admin' ? 'active' : ''}"
-                       th:href="@{/cart}">Cart</a>
-                </li>
             </ul>
-            <div class="d-flex ms-auto">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
-            </div>
+
+        </div>
+        <div class="d-flex justify-content-end">
+            <form
+                    id="book-search"
+                    th:action="@{/}"
+                    method="get"
+
+            >
+                <div class="input-group">
+                    <input class="form-control rounded-4" type="text" name="keyword" id="keyword"
+                           placeholder="Search recipe by title" th:value="${preloadSearch}">
+                    <button type="submit" id="search-button" class="btn btn-secondary rounded-4 mx-2"> Search</button>
+                </div>
+            </form>
+
         </div>
     </div>
 </nav>

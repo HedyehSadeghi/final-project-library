@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<footer th:fragment="footer"
+        class="row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-2 pb-1 mt-5 mb-2 border-top d-flex justify-content-center">
+    <div class="col mb-3 d-flex align-items-center">
+        <ul>
+            <li class="list-unstyled"><i class="fa-solid fa-book"></i></li>
+            <li class="text-body-secondary list-unstyled">© 2023</li>
+        </ul>
+    </div>
+
+    <div class="col mb-3">
+
+    </div>
+
+    <div class="col mb-3">
+        <h5>Library</h5>
+        <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a th:href="@{/}" class="nav-link p-0 text-body-secondary">Home</a></li>
+            <li class="nav-item mb-2"><a th:href="@{/shop}" class="nav-link p-0 text-body-secondary">Shop</a></li>
+            <li class="nav-item mb-2"><a th:href="@{/contacts}" class="nav-link p-0 text-body-secondary">Contacts</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col mb-3">
+        <h5>Admin</h5>
+        <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" th:href="@{/books}"> Book List </a>
+            </li>
+            <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" th:href="@{/categories}">Category
+                List</a></li>
+            <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" th:href="@{/clients/purchases}">Client
+                purchases</a></li>
+            <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" th:href="@{/books/warehouse}">Warehouse</a>
+            </li>
+            <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" th:href="@{/suppliers/purchases}">Supplier
+                purchases</a></li>
+        </ul>
+    </div>
+
+</footer>
+
+</html>

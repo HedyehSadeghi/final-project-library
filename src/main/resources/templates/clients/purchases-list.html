@@ -5,7 +5,19 @@
 <nav th:replace="fragments/navbar :: topNavbar('admin')"></nav>
 <div class="container">
     <!-- Attributi: List <ClientPurchase> clientPurchaseList  -->
-    <h1 class="text-danger">Purchase List </h1>
+    <div class="dropdown my-4">
+        <a class="btn btn-info btn-lg dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+           aria-expanded="false">
+            Client purchases
+        </a>
+
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" th:href="@{/books}">Book List</a></li>
+            <li><a class="dropdown-item" th:href="@{/categories}">Category List</a></li>
+            <li><a class="dropdown-item" th:href="@{/books/warehouse}">Warehouse</a></li>
+            <li><a class="dropdown-item" th:href="@{/suppliers/purchases}">Supplier purchases</a></li>
+        </ul>
+    </div>
 
     <div th:if="${redirectMessage != null}"
          class="alert alert-success alert-dismissible fade show mt-4"
@@ -32,7 +44,7 @@
             <td th:text="${clp.book.title}"></td>
             <td th:text="${clp.date}"></td>
             <td th:text="${clp.amount}"></td>
-            <td th:text="|${clp.price} euro|"></td>
+            <td th:text="|${clp.getPrice()} euro|"></td>
             <td class="d-flex justify-content-end">
                 <a class="btn btn-primary mx-2" th:href="@{/clients/edit-purchase/{id}(id=${clp.id})}" role="button">Edit </a>
 
@@ -48,12 +60,14 @@
     </table>
     <hr>
     <div class="d-flex justify-content-between">
-        <a class="btn btn-primary" th:href="@{/books}" role="button">Book list</a>
         <a class="btn btn-success" th:href="@{/clients/create-purchase}" role="button">Add purchase</a>
     </div>
 
 
 </div>
+
+
+<footer th:replace="fragments/footer :: footer"></footer>
 <th:block th:replace="fragments/resources :: script"></th:block>
 </body>
 </html>
