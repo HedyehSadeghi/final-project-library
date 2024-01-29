@@ -68,7 +68,7 @@ public class ShopController {
 
     }
 
-    @PostMapping("/buy/{id}")
+    @PostMapping("/buy")
     public String storePurchase(@Valid @ModelAttribute ClientPurchase clientPurchaseForm, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             return "shop/buy-now";
