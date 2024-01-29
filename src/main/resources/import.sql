@@ -76,4 +76,4 @@ INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book
 INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(66, '2023-03-12', 920.7, 10, 5);
 INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(15, '2023-12-01', 142.25, 8, 4);
 INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(47, '2023-05-10', 691.84, 13, 2);
-INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(140, '2023-02-29', 4186, 12, 1);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(140,'2023-02-28', 4186, 12, 1);
