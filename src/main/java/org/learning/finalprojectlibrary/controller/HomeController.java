@@ -34,4 +34,10 @@ public class HomeController {
 
         return "home/landing-page";
     }
+
+    @GetMapping("contacts")
+    private String contacts() {
+        return "home/contacts";
+    }
+
 }
