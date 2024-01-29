@@ -2,6 +2,7 @@ package org.learning.finalprojectlibrary.controller;
 
 import jakarta.validation.Valid;
 import org.learning.finalprojectlibrary.model.Book;
+import org.learning.finalprojectlibrary.model.Category;
 import org.learning.finalprojectlibrary.model.ClientPurchase;
 import org.learning.finalprojectlibrary.repository.BookRepository;
 import org.learning.finalprojectlibrary.repository.CategoryRepository;
@@ -16,6 +17,8 @@ import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,14 +34,31 @@ public class ShopController {
     private ClientPurchaseRepository clientPurchaseRepository;
 
     @GetMapping
-    public String shop(@RequestParam(name = "keyword", required = false) String searchKeyword, Model model) {
-        List<Book> shopList;
-        if (searchKeyword != null) {
+    public String shop(@RequestParam(name = "keyword", required = false) String searchKeyword, @RequestParam(name = "category", required = false) List<Category> categories, Model model) {
+        List<Book> shopList = new ArrayList<>();
+        if (searchKeyword != null && categories == null) {
             shopList = bookRepository.findByTitleContaining(searchKeyword);
-        } else {
+        } else if (searchKeyword == null && categories == null) {
             shopList = bookRepository.findAll();
+        } else if (searchKeyword == null && (categories != null)) {
+            shopList = bookRepository.findAll();
+            List<Book> filteredList = new ArrayList<>();
+
+            if (!(categories.isEmpty())) {
+                for (Book book : shopList) {
+                    for (Category cat : book.getCategoryList()) {
+                        if (categories.contains(cat)) {
+                            filteredList.add(book);
+                        }
+                    }
+                }
+
+            }
+            shopList = filteredList;
         }
-        model.addAttribute("shopList", shopList);
+
+        model.addAttribute("shopList", new HashSet<>(shopList));
+        model.addAttribute("categoryList", categoryRepository.findAll());
         return "shop/list";
     }
 

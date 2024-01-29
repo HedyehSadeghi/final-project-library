@@ -21,6 +21,8 @@ public class HomeController {
 
     @GetMapping()
     private String index(Model model) {
+        
+
         List<Book> bookListTop5 = bookRepository.findAll(Sort.by("ClientPurchases").descending());
         bookListTop5 = bookListTop5.subList(0, 5);
 
