@@ -16,9 +16,9 @@
 
 
         <div class="col-12">
-            <h4 th:text=" *{book.title}">  </h4>
             <input th:field="*{book}" type="hidden">
             <input th:field="*{date}" type="hidden">
+            <h4 th:text=" *{book.title}">  </h4>
         </div>
 
 
@@ -26,25 +26,25 @@
             <label class="form-label" for="amount">Amount</label>
             <select id="amount" class="form-select" th:field="*{amount}" onchange="changePrice(event)">
                 <option value= "1" selected>1</option>
-                <option th:value= "2"> 2</option>
-                <option th:value= "3"> 3</option>
-                <option th:value= "4" >4</option>
-                <option th:value= "5" >5</option>
-                <option th:value= "6" >6</option>
-                <option th:value= "7" >7</option>
-                <option th:value= "8" >8</option>
-                <option th:value= "9" >9</option>
-                <option th:value= "10" >10</option>
-                <option th:value= "11" >11</option>
-                <option th:value= "12" >12</option>
-                <option th:value= "13" >13</option>
-                <option th:value= "14" >14</option>
-                <option th:value= "15" >15</option>
-                <option th:value= "16" >16</option>
-                <option th:value= "17" >17</option>
-                <option th:value= "18" >18</option>
-                <option th:value= "19" >19</option>
-                <option th:value= "20" >20</option>
+                <option value= "2"> 2</option>
+                <option value= "3"> 3</option>
+                <option value= "4" >4</option>
+                <option value= "5" >5</option>
+                <option value= "6" >6</option>
+                <option value= "7" >7</option>
+                <option value= "8" >8</option>
+                <option value= "9" >9</option>
+                <option value= "10" >10</option>
+                <option value= "11" >11</option>
+                <option value= "12" >12</option>
+                <option value= "13" >13</option>
+                <option value= "14" >14</option>
+                <option value= "15" >15</option>
+                <option value= "16" >16</option>
+                <option value= "17" >17</option>
+                <option value= "18" >18</option>
+                <option value= "19" >19</option>
+                <option value= "20" >20</option>
             </select>
         </div>
 

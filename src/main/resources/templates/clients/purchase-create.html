@@ -45,17 +45,6 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-6">
-            <label class="form-label">Price</label>
-            <input type="hidden"
-                   th:field="*{price}"
-                   th:errorClass="is-invalid">
-            <div class="invalid-feedback" th:if="${#fields.hasErrors('price')}">
-                <ul>
-                    <li th:each="err : ${#fields.errors('price')}" th:text="${err}"></li>
-                </ul>
-            </div>
-        </div>
 
 
         <div class="col-12 mt-4">
