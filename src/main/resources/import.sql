@@ -1,9 +1,9 @@
 --import libri--
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Tale about a whale', 'https://m.media-amazon.com/images/I/71d5wo+-MuL._AC_UF1000,1000_QL80_.jpg', 10.50, 'Moby Dick');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Tale about a wizard', 'https://m.media-amazon.com/images/I/91VZqV0Cy8L._AC_UF1000,1000_QL80_.jpg', 12.50, 'Harry Potter - Prisoner of Azkaban');
-INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Tale about a wizard', 'https://m.media-amazon.com/images/I/71sH3vxziLL._AC_UF1000,1000_QL80_.jpg', 13, 'Harry Potter - Deathly Hallows');
-INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Tale about a wizard', 'https://upload.wikimedia.org/wikipedia/en/7/70/Harry_Potter_and_the_Order_of_the_Phoenix.jpg', 14, 'Harry Potter - Order of Phoenix');
-INSERT INTO db_final_library.books(description, photo, price, title)VALUES('tale about a wizard', 'https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/Harry_Potter_and_the_Half-Blood_Prince_cover.png/220px-Harry_Potter_and_the_Half-Blood_Prince_cover.png', 13, 'Harry Potter - Half-Blood Prince');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Tale about a wizard', 'https://m.media-amazon.com/images/I/81W7uynFyWL._AC_UF1000,1000_QL80_.jpg', 13, 'Harry Potter - Deathly Hallows');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Tale about a wizard', 'https://m.media-amazon.com/images/I/813lOXWdSNL._AC_UF1000,1000_QL80_.jpg', 14, 'Harry Potter - Order of Phoenix');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('tale about a wizard', 'https://m.media-amazon.com/images/I/81YvqjX4AdL._SY466_.jpg', 13, 'Harry Potter - Half-Blood Prince');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Agile software', 'https://m.media-amazon.com/images/I/51E2055ZGUL._SY466_.jpg', 29, 'Clean Code');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Dystopian novella by George Orwell','https://m.media-amazon.com/images/I/81StSOpmkjL._AC_UF1000,1000_QL80_.jpg',11.99,'1984');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Tale about a wizard','https://libreriavitaepensiero.mediabiblos.it/copertine/salani/harry-potter-e-la-pietra-filosofale-ediz-anniversario-25-anni-9788831017329.jpg',9.50,'Harry Potter - Philosopher\'s stone');
@@ -13,7 +13,19 @@ INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Youn
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Children\'s novel','https://m.media-amazon.com/images/I/711cPWrJXRL._AC_UF1000,1000_QL80_.jpg',29.90,'Alice\'s adventures in Wonderland');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Mystery thriller novel','https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1463592438i/30228538.jpg',14.72,'The Da Vinci code');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Post-apocalyptic novel','https://www.ibs.it/images/9788858831939_0_536_0_75.jpg',11.40,'Cecità');
-INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Bildungsroman','https://emonsaudiolibri.it/media/images/cover/lamica-geniale-201.jpg',18.05,'L\'amica geniale');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by Stephen King','https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/It_%281986%29_front_cover%2C_first_edition.jpg/800px-It_%281986%29_front_cover%2C_first_edition.jpg',17.95,'It');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by Bram Stoker','https://m.media-amazon.com/images/I/61w70l39W9L._AC_UF1000,1000_QL80_.jpg',17.10,'Dracula');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by H.P.Lovecraft','https://m.media-amazon.com/images/I/71HrG7nN14L._AC_UF1000,1000_QL80_.jpg',5.60,'Call of Cthulhu');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by Mary Shelley','https://www.newtoncompton.com/files/cache/bookimages/17250/frankenstein-x1000.jpg',8.08,'Frankenstein');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by Michael McDowell','https://www.ibs.it/images/9788854529199_0_424_0_75.jpg',14.90,'Gli aghi d\'oro');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by Jason Rekulak ','https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/91puw8POkwL._SY466_.jpg',14.90,'Hidden Pictures: A Novel');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by Richard Matheson','https://www.ibs.it/images/9788804723974_0_536_0_75.jpg',12.82,'I am legend');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/I/71bVExi4yXL._AC_UF1000,1000_QL80_.jpg',33.00,'The body keeps the score');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71GigAO92UL._SY466_.jpg',15.06,'La dittatura delle abitudini');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/I/714XmrShddL._SY466_.jpg',14.90,'L\'interpretazione dei sogni');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/I/71nKh1RtZwL._SY466_.jpg',23.65,'Il libro della psicologia. Grandi idee spiegate in modo semplice');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/I/61KeJ47L0HL._SY466_.jpg',14.97,'Psicologia Nera');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/I/611WMa73OiL._SY466_.jpg',38.00,'Come sono fatte le emozioni. La vita segreta del cervello');
 
 --import client purchases--
 INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 5, '2024-01-24',1 );
