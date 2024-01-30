@@ -43,11 +43,15 @@ INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 2,
 INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 31, '2024-01-24',2);
 INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 14, '2024-01-20', 4);
 INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 29, '2024-01-19', 5);
-INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 39, '2023-02-18',10);
-INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 40, '2023-04-15',9);
+INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 539, '2023-02-18',10);
+INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 340, '2023-04-15',9);
 INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 69, '2024-01-26',8);
-INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 72, '2023-11-25',11);
-INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 84, '2023-08-07',14);
+INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 272, '2023-11-25',11);
+INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 684, '2023-08-07',14);
+INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 150, '2024-01-30',14);
+INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 350, '2023-09-10',6);
+INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 150, '2024-01-20',13);
+INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 450, '2023-01-20',7);
 
 
 

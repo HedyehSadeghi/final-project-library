@@ -1,6 +1,7 @@
 package org.learning.finalprojectlibrary.controller;
 
 import org.learning.finalprojectlibrary.comparator.BookPurchaseComparator;
+import org.learning.finalprojectlibrary.comparator.BookPurchaseDateComparator;
 import org.learning.finalprojectlibrary.model.Book;
 import org.learning.finalprojectlibrary.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.time.LocalDate;
-import java.time.temporal.TemporalAdjusters;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
@@ -33,8 +32,9 @@ public class HomeController {
 
 
         //top5 last month
-        LocalDate firstDayOfPreviousMonth = LocalDate.now().minusMonths(1).with(TemporalAdjusters.firstDayOfMonth());
-        LocalDate lastDayOfPreviousMonth = LocalDate.now().minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
+        List<Book> booksPurchasedLastMonth = bookRepository.findAll();
+        Collections.sort(booksPurchasedLastMonth, Collections.reverseOrder(new BookPurchaseDateComparator()));
+        booksPurchasedLastMonth = booksPurchasedLastMonth.subList(0, 5);
 
 
         //top5 horror
@@ -68,6 +68,7 @@ public class HomeController {
 
 
         model.addAttribute("bookListTop5", bookListTop5);
+        model.addAttribute("booksPurchasedLastMonth", booksPurchasedLastMonth);
         model.addAttribute("horrorTop5", horrorTop5);
         model.addAttribute("fantasyTop5", fantasyTop5);
         model.addAttribute("fictionTop5", fictionTop5);

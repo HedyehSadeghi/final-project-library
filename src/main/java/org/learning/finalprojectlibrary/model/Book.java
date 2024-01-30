@@ -8,7 +8,9 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "books")
@@ -35,6 +37,19 @@ public class Book {
     @OnDelete(action = OnDeleteAction.CASCADE)
     List<Category> categoryList;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Objects.equals(id, book.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
     public int getWarehouse() {
         int supplier = 0;
         int client = 0;
@@ -53,6 +68,19 @@ public class Book {
             amount += clientPurchase.getAmount();
         }
         return amount;
+    }
+
+    public int getAmountPurchasesLastMonth() {
+        LocalDate today = LocalDate.now();
+        LocalDate oneMonthAgo = today.minusMonths(1);
+        int amount = 0;
+        for (ClientPurchase clientPurchase : clientPurchases) {
+            if (clientPurchase.getDate().isAfter(oneMonthAgo)) {
+                amount += clientPurchase.getAmount();
+            }
+        }
+        return amount;
+
     }
 
     public Integer getId() {
