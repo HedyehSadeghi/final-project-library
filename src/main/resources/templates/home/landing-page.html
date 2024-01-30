@@ -4,6 +4,32 @@
 <body class="bg-light">
 <nav th:replace="fragments/navbar :: topNavbar('')"></nav>
 
+
+<div class="container my-5 w-50 d-flex justify-content-center align-items-center">
+    <div class="mx-4">
+        <a class="navbar-brand" th:href="@{/}" style="font-size: 35px;"><img
+                th:src="@{/img/library-svgrepo-com.svg}" alt="Bootstrap" width="50" height="50"></a>
+
+    </div>
+    <div>
+        <form
+                id="book-search"
+                th:action="@{/shop}"
+                method="get"
+
+        >
+            <div class="input-group">
+                <input class="form-control rounded-4" type="text" name="keyword" id="keyword"
+                       placeholder="Search book by title" th:value="${preloadSearch}">
+                <button type="submit" id="search-button" class="btn btn-secondary rounded-4 mx-2"><i
+                        class="fa fa-search"></i></button>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
 <!-- Attributi : List<Book> bookListTop5, List<Book> horrorTop5,  fantasyTop5, fictionTop5, psychologyTop5, booksPurchasedLastMonth-->
 
 <div class="container-fluid">
@@ -34,7 +60,7 @@
             </button>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center px-5">
             <h1 class="text-center my-4"> Best Sellers of All Time </h1>
             <div class="col-2 my-2 " th:each="book: ${bookListTop5}">
                 <div class="card border border-0" style="width: 18rem;">
@@ -66,7 +92,7 @@
             </div>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center px-5">
             <h1 class="text-center my-4"> Best Sellers in the last month </h1>
             <div class="col-2 my-2 " th:each="book: ${booksPurchasedLastMonth}">
                 <div class="card border border-0" style="width: 18rem;">
@@ -98,7 +124,7 @@
             </div>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center px-5">
             <h1 class="text-center my-4"> Best Sellers Fantasy </h1>
             <div class="col-2 my-2 " th:each="book: ${fantasyTop5}">
                 <div class="card border border-0" style="width: 18rem;">
@@ -132,7 +158,7 @@
 
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center px-5">
             <h1 class="text-center my-4"> Best Sellers Fiction </h1>
             <div class="col-2 my-2 " th:each="book: ${fictionTop5}">
                 <div class="card border border-0" style="width: 18rem;">
