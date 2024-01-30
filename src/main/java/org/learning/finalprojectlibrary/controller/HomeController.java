@@ -34,15 +34,36 @@ public class HomeController {
         LocalDate lastDayOfPreviousMonth = LocalDate.now().minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
 
         //top5 horror
-        List<Book> books = bookRepository.findAll();
+        List<Book> books = bookRepository.findAll(Sort.by("ClientPurchases").descending());
         // Filtra i libri horror usando un predicato
         Predicate<Book> isHorror = book -> book.getCategoryList().stream().anyMatch(category -> category.getName().equals("Horror"));
         List<Book> horrorTop5 = books.stream().filter(isHorror).collect(Collectors.toList());
+        horrorTop5 = horrorTop5.subList(0, 5);
+
+        //top5 fantasy
+        List<Book> books1 = bookRepository.findAll(Sort.by("ClientPurchases").descending());
+        Predicate<Book> isFantasy = book -> book.getCategoryList().stream().anyMatch(category -> category.getName().equals("Fantasia e Fantascienza"));
+        List<Book> fantasyTop5 = books1.stream().filter(isFantasy).collect(Collectors.toList());
+        fantasyTop5 = fantasyTop5.subList(0, 5);
+
+        //top5 narrativa
+        List<Book> books2 = bookRepository.findAll(Sort.by("ClientPurchases").descending());
+        Predicate<Book> isFiction = book -> book.getCategoryList().stream().anyMatch(category -> category.getName().equals("Narrativa Straniera"));
+        List<Book> fictionTop5 = books2.stream().filter(isFiction).collect(Collectors.toList());
+        fictionTop5 = fictionTop5.subList(0, 5);
+
+        //top5 psicologia
+        List<Book> books3 = bookRepository.findAll(Sort.by("ClientPurchases").descending());
+        Predicate<Book> isPsychology = book -> book.getCategoryList().stream().anyMatch(category -> category.getName().equals("Psicologia"));
+        List<Book> psychologyTop5 = books3.stream().filter(isPsychology).collect(Collectors.toList());
+        psychologyTop5 = psychologyTop5.subList(0, 5);
 
 
         model.addAttribute("bookListTop5", bookListTop5);
-
         model.addAttribute("horrorTop5", horrorTop5);
+        model.addAttribute("fantasyTop5", fantasyTop5);
+        model.addAttribute("fictionTop5", fictionTop5);
+        model.addAttribute("psychologyTop5", psychologyTop5);
 
         return "home/landing-page";
     }
