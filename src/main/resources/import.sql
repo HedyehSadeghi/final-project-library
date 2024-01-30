@@ -26,6 +26,12 @@ INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psyc
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/I/71nKh1RtZwL._SY466_.jpg',23.65,'Il libro della psicologia. Grandi idee spiegate in modo semplice');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/I/61KeJ47L0HL._SY466_.jpg',14.97,'Psicologia Nera');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/I/611WMa73OiL._SY466_.jpg',38.00,'Come sono fatte le emozioni. La vita segreta del cervello');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Prayer book','https://www.lafeltrinelli.it/images/9788810702673_0_536_0_75.jpg',4.75,'La preghiera del mattino e della sera');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Holy book','https://www.lafeltrinelli.it/images/9791280736246_0_536_0_75.jpg',17.58,'La sacra Bibbia');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES(' book','https://m.media-amazon.com/images/I/611WMa73OiL._SY466_.jpg',38.00,'Come sono fatte le emozioni. La vita segreta del cervello');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES(' book','https://m.media-amazon.com/images/I/611WMa73OiL._SY466_.jpg',38.00,'Come sono fatte le emozioni. La vita segreta del cervello');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES(' book','https://m.media-amazon.com/images/I/611WMa73OiL._SY466_.jpg',38.00,'Come sono fatte le emozioni. La vita segreta del cervello');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES(' book','https://m.media-amazon.com/images/I/611WMa73OiL._SY466_.jpg',38.00,'Come sono fatte le emozioni. La vita segreta del cervello');
 
 --import client purchases--
 INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 5, '2024-01-24',1 );
@@ -50,15 +56,59 @@ INSERT INTO db_final_library.categories( name)VALUES('Fantasia e Fantascienza');
 INSERT INTO db_final_library.categories( name)VALUES('Religione e Spiritualità');
 INSERT INTO db_final_library.categories( name)VALUES('Psicologia');
 INSERT INTO db_final_library.categories( name)VALUES('Storico');
-INSERT INTO db_final_library.categories( name)VALUES('Umoristico');
+INSERT INTO db_final_library.categories( name)VALUES('Informatico');
 INSERT INTO db_final_library.categories( name)VALUES('Horror');
-
+INSERT INTO db_final_library.categories( name)VALUES('Distopico');
+-
 
 --import categories-books--
-INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(1, 1);
-INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(4, 3);
-INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(4, 4);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(3, 1);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(4, 2);
 INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(1, 2);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(4, 3);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(1, 3);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(4, 4);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(1, 4);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(4, 5);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(1, 5);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(8, 6);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(10, 7);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(3, 7);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(4, 8);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(1, 8);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(4, 9);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(1, 9);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(4, 10);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(1, 10);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(3, 11);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(1, 11);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(3, 12);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(1, 12);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(2, 13);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(3, 13);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(3, 14);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(4, 14);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(10, 14);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(3, 15);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(9, 15);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(9, 16);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(3, 16);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(9, 17);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(3, 17);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(9, 18);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(3, 18);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(9, 19);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(3, 19);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(9, 20);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(3, 20);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(9, 21);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(3, 21);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(6, 22);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(6, 23);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(6, 24);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(6, 25);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(6, 26);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(6, 27);
 
 
 
@@ -90,3 +140,16 @@ INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book
 INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(15, '2023-12-01', 142.25, 8, 4);
 INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(47, '2023-05-10', 691.84, 13, 2);
 INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(140,'2023-02-28', 4186, 12, 1);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(65,'2023-04-12', 1166.75, 15, 4);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(182,'2023-03-17', 3112.2, 16, 3);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(79,'2023-09-11', 442.4, 17, 1);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(58,'2023-12-22',468.64 , 18, 7);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(100,'2023-01-28',1490 , 19, 5);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(172,'2022-12-30',2562.8 , 20, 6);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(200,'2023-02-28', 2564, 21, 2);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(40,'2023-03-28',1320 , 22, 3);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(44,'2024-01-29', 662.64, 23, 4);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(71,'2023-07-22',1057.9 , 24, 7);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(79,'2023-05-10',1868.35 , 25, 1);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(89,'2023-07-20', 1332.33, 26, 4);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(122,'2022-12-27',4636 , 27, 2);
