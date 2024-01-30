@@ -26,12 +26,12 @@ INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psyc
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/I/71nKh1RtZwL._SY466_.jpg',23.65,'Il libro della psicologia. Grandi idee spiegate in modo semplice');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/I/61KeJ47L0HL._SY466_.jpg',14.97,'Psicologia Nera');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://m.media-amazon.com/images/I/611WMa73OiL._SY466_.jpg',38.00,'Come sono fatte le emozioni. La vita segreta del cervello');
-INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Prayer book','https://www.lafeltrinelli.it/images/9788810702673_0_536_0_75.jpg',4.75,'La preghiera del mattino e della sera');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('History book','https://m.media-amazon.com/images/I/71Wbhgaqz7L._SY466_.jpg',12.82,'Memorie di Adriano');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Holy book','https://www.lafeltrinelli.it/images/9791280736246_0_536_0_75.jpg',17.58,'La sacra Bibbia');
-INSERT INTO db_final_library.books(description, photo, price, title)VALUES(' book','https://m.media-amazon.com/images/I/611WMa73OiL._SY466_.jpg',38.00,'Come sono fatte le emozioni. La vita segreta del cervello');
-INSERT INTO db_final_library.books(description, photo, price, title)VALUES(' book','https://m.media-amazon.com/images/I/611WMa73OiL._SY466_.jpg',38.00,'Come sono fatte le emozioni. La vita segreta del cervello');
-INSERT INTO db_final_library.books(description, photo, price, title)VALUES(' book','https://m.media-amazon.com/images/I/611WMa73OiL._SY466_.jpg',38.00,'Come sono fatte le emozioni. La vita segreta del cervello');
-INSERT INTO db_final_library.books(description, photo, price, title)VALUES(' book','https://m.media-amazon.com/images/I/611WMa73OiL._SY466_.jpg',38.00,'Come sono fatte le emozioni. La vita segreta del cervello');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Prayer book','https://www.lafeltrinelli.it/images/9788809971073_0_536_0_75.jpg',17.10,'Educazione indiana');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Religious book','https://www.lafeltrinelli.it/images/9788858153444_0_536_0_75.jpg',12.35,'Atti impuri');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('History book','https://m.media-amazon.com/images/I/91GaA-ZnofL._SY466_.jpg',12.25,'Nel nome di Roma');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('History book','https://www.scontolibri.com/pub/media/catalog/product/imgean/g/3/9/7/4/9788854194793g.jpg?width=700&height=1000&store=default&image-type=image',9.41,'I medici. Una dinastia al potere');
 
 --import client purchases--
 INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 5, '2024-01-24',1 );
@@ -109,6 +109,12 @@ INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id
 INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(6, 25);
 INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(6, 26);
 INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(6, 27);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(7, 28);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(5, 29);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(5, 30);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(5, 31);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(7, 32);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(7, 33);
 
 
 
@@ -153,3 +159,9 @@ INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book
 INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(79,'2023-05-10',1868.35 , 25, 1);
 INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(89,'2023-07-20', 1332.33, 26, 4);
 INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(122,'2022-12-27',4636 , 27, 2);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(70,'2022-12-15',897.4 , 28, 1);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(80,'2022-12-11',1406.4 , 29, 5);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(100,'2022-11-11',1710 , 30, 4);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(120,'2022-11-19',1482 , 31, 2);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(150,'2022-11-26',1837.5 , 32, 6);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(132,'2023-06-27',1242.12 , 33, 2);
