@@ -5,16 +5,16 @@
 <body class="bg-light">
 <nav th:replace="fragments/navbar :: topNavbar('')"></nav>
 
-<!-- Attributi : List<Book> bookListTop5,  List<Book> horrorTop5-->
+<!-- Attributi : List<Book> bookListTop5,-->
 
 <div class="container-fluid">
     <div class="row d-flex justify-content-center">
         <!-- First Carousel -->
-        <div class="col-10 d-flex justify-content-center">
+        <div class="col-10 d-flex justify-content-center my-4">
             <div id="carouselExampleControls" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src=""
+                        <img src="https://www.lafeltrinelli.it/assets/2024/01/20240119123657-pelucheomaggioleftslideshowwelcomefeltrinelli-.webp"
                              class="d-block w-10"
                              alt="...">
                     </div>
@@ -47,7 +47,7 @@
             <h1 class="text-center my-4"> Best Sellers </h1>
             <div class="col-2 my-2 " th:each="book: ${bookListTop5}">
                 <div class="card border border-0" style="width: 18rem;">
-                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="400rem">
+                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="280rem">
                     <div class="card-body bg-light">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
                            th:text="${book.title}"
@@ -81,7 +81,7 @@
             <h1 class="text-center my-4"> Top Horror </h1>
             <div class="col-2 my-2 " th:each="book: ${bookListTop5}">
                 <div class="card border border-0" style="width: 18rem;">
-                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="400rem">
+                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="280rem">
                     <div class="card-body bg-light">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
                            th:text="${book.title}"
@@ -115,7 +115,7 @@
             <h1 class="text-center my-4"> Top Fantasy </h1>
             <div class="col-2 my-2 " th:each="book: ${bookListTop5}">
                 <div class="card border border-0" style="width: 18rem;">
-                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="400rem">
+                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="280rem">
                     <div class="card-body bg-light">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
                            th:text="${book.title}"
@@ -149,7 +149,7 @@
             <h1 class="text-center my-4"> Top Psicology</h1>
             <div class="col-2 my-2 " th:each="book: ${bookListTop5}">
                 <div class="card border border-0" style="width: 18rem;">
-                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="400rem">
+                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="280rem">
                     <div class="card-body bg-light">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
                            th:text="${book.title}"
@@ -178,41 +178,6 @@
             </div>
 
         </div>
-
-        <div class="row justify-content-center">
-            <h1 class="text-center my-4"> Top Narrative </h1>
-            <div class="col-2 my-2 " th:each="book: ${bookListTop5}">
-                <div class="card border border-0" style="width: 18rem;">
-                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="400rem">
-                    <div class="card-body bg-light">
-                        <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
-                           th:text="${book.title}"
-                           th:href="@{/shop/show/{id}(id=${book.id})}">Card
-                            title</a>
-                        <div class="cc-content-rating">
-                            <div class="cc-rating-icons">
-                                <div class="cc-rating cc-rating--5">
-                                    <div style="display: flex; align-items: flex-start; justify-content: center; height: 50px;">
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star-half-alt" style="color: #FFD43B;"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="card-text d-flex justify-content-center"
-                           th:text="${book.price} + &euro;"
-                           th:href="@{/shop/show/{id}(id=${book.id})}">Card
-                            price</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
     </div>
 </div>
 

@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/")
@@ -30,9 +32,13 @@ public class HomeController {
         //top5 last month
         LocalDate firstDayOfPreviousMonth = LocalDate.now().minusMonths(1).with(TemporalAdjusters.firstDayOfMonth());
         LocalDate lastDayOfPreviousMonth = LocalDate.now().minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
-        
+
         //top5 horror
-        List<Book> horrorTop5 = bookRepository.findBestSellersByCategory("Horror");
+        List<Book> books = bookRepository.findAll();
+        // Filtra i libri horror usando un predicato
+        Predicate<Book> isHorror = book -> book.getCategoryList().stream().anyMatch(category -> category.getName().equals("Horror"));
+        List<Book> horrorTop5 = books.stream().filter(isHorror).collect(Collectors.toList());
+
 
         model.addAttribute("bookListTop5", bookListTop5);
 
