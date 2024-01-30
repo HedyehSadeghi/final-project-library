@@ -89,7 +89,6 @@ INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id
 INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(2, 13);
 INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(3, 13);
 INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(3, 14);
-INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(4, 14);
 INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(10, 14);
 INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(3, 15);
 INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(9, 15);
