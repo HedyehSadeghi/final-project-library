@@ -9,48 +9,33 @@
 <div class="container-fluid">
     <div class="row d-flex justify-content-center">
         <!-- First Carousel -->
-        <div class="col-10 d-flex justify-content-center">
-            <div id="carouselExampleControls" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src=""
-                             class="d-block w-10"
-                             alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://www.ibs.it/assets/2020/12/20201210114858-libro-4-.jpg" class="d-block w-10"
-                             alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://www.ibs.it/assets/2020/12/20201210115037-libro-19-.jpg" class="d-block w-10"
-                             alt="...">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-10 d-flex justify-content-end position-relative">
+                    <!-- Immagine con scritte -->
+                    <img alt="Background Image" class="w-100  mt-3"
+                         src="https://www.tvita.it/wp-content/uploads/2022/04/vendere-un-libro-guest-post_800x419.jpg">
+
+                    <!-- Scritte posizionate in alto a destra dell'immagine -->
+                    <div class="position-absolute top-0 end-0 text-white text-center p-3">
+                        <h1>Limited-Time Book Offer!</h1>
+                        <p>Discover new worlds with our handpicked selection of books. Buy 2, Get 1 Free! <br> Diverse
+                            genres for every taste.</p>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
-
-        <!-- Second Carousel -->
 
 
         <div class="row justify-content-center">
             <h1 class="text-center my-4"> Best Sellers </h1>
             <div class="col-2 my-2 " th:each="book: ${bookListTop5}">
                 <div class="card border border-0" style="width: 18rem;">
-                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="400rem">
+                    <img alt="..." class="card-img-top" height="400rem" th:src="${book.photo}">
                     <div class="card-body bg-light">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
-                           th:text="${book.title}"
-                           th:href="@{/shop/show/{id}(id=${book.id})}">Card
+                           th:href="@{/shop/show/{id}(id=${book.id})}"
+                           th:text="${book.title}">Card
                             title</a>
                         <div class="cc-content-rating">
                             <div class="cc-rating-icons">
@@ -66,8 +51,8 @@
                             </div>
                         </div>
                         <p class="card-text d-flex justify-content-center"
-                           th:text="${book.price} + &euro;"
-                           th:href="@{/shop/show/{id}(id=${book.id})}">Card
+                           th:href="@{/shop/show/{id}(id=${book.id})}"
+                           th:text="${book.price} + &euro;">Card
                             price</p>
                     </div>
                 </div>
@@ -81,11 +66,11 @@
                 Horror </h1>
             <div class="col-2 my-2 " th:each="book: ${horrorTop5}">
                 <div class="card border border-0" style="width: 18rem;">
-                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="400rem">
+                    <img alt="..." class="card-img-top" height="400rem" th:src="${book.photo}">
                     <div class="card-body bg-light">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
-                           th:text="${book.title}"
-                           th:href="@{/shop/show/{id}(id=${book.id})}">Card
+                           th:href="@{/shop/show/{id}(id=${book.id})}"
+                           th:text="${book.title}">Card
                             title</a>
                         <div class="cc-content-rating">
                             <div class="cc-rating-icons">
@@ -101,8 +86,8 @@
                             </div>
                         </div>
                         <p class="card-text d-flex justify-content-center"
-                           th:text="${book.price} + &euro;"
-                           th:href="@{/shop/show/{id}(id=${book.id})}">Card
+                           th:href="@{/shop/show/{id}(id=${book.id})}"
+                           th:text="${book.price} + &euro;">Card
                             price</p>
                     </div>
                 </div>
@@ -115,11 +100,11 @@
             <h1 class="text-center my-4"> Top Fantasy </h1>
             <div class="col-2 my-2 " th:each="book: ${bookListTop5}">
                 <div class="card border border-0" style="width: 18rem;">
-                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="400rem">
+                    <img alt="..." class="card-img-top" height="400rem" th:src="${book.photo}">
                     <div class="card-body bg-light">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
-                           th:text="${book.title}"
-                           th:href="@{/shop/show/{id}(id=${book.id})}">Card
+                           th:href="@{/shop/show/{id}(id=${book.id})}"
+                           th:text="${book.title}">Card
                             title</a>
                         <div class="cc-content-rating">
                             <div class="cc-rating-icons">
@@ -135,8 +120,8 @@
                             </div>
                         </div>
                         <p class="card-text d-flex justify-content-center"
-                           th:text="${book.price} + &euro;"
-                           th:href="@{/shop/show/{id}(id=${book.id})}">Card
+                           th:href="@{/shop/show/{id}(id=${book.id})}"
+                           th:text="${book.price} + &euro;">Card
                             price</p>
                     </div>
                 </div>
@@ -149,11 +134,11 @@
             <h1 class="text-center my-4"> Top Psychology</h1>
             <div class="col-2 my-2 " th:each="book: ${psychologyTop5}">
                 <div class="card border border-0" style="width: 18rem;">
-                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="400rem">
+                    <img alt="..." class="card-img-top" height="400rem" th:src="${book.photo}">
                     <div class="card-body bg-light">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
-                           th:text="${book.title}"
-                           th:href="@{/shop/show/{id}(id=${book.id})}">Card
+                           th:href="@{/shop/show/{id}(id=${book.id})}"
+                           th:text="${book.title}">Card
                             title</a>
                         <div class="cc-content-rating">
                             <div class="cc-rating-icons">
@@ -169,8 +154,8 @@
                             </div>
                         </div>
                         <p class="card-text d-flex justify-content-center"
-                           th:text="${book.price} + &euro;"
-                           th:href="@{/shop/show/{id}(id=${book.id})}">Card
+                           th:href="@{/shop/show/{id}(id=${book.id})}"
+                           th:text="${book.price} + &euro;">Card
                             price</p>
                     </div>
                 </div>
@@ -183,11 +168,11 @@
             <h1 class="text-center my-4"> Top Fiction </h1>
             <div class="col-2 my-2 " th:each="book: ${fictionTop5}">
                 <div class="card border border-0" style="width: 18rem;">
-                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="400rem">
+                    <img alt="..." class="card-img-top" height="400rem" th:src="${book.photo}">
                     <div class="card-body bg-light">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
-                           th:text="${book.title}"
-                           th:href="@{/shop/show/{id}(id=${book.id})}">Card
+                           th:href="@{/shop/show/{id}(id=${book.id})}"
+                           th:text="${book.title}">Card
                             title</a>
                         <div class="cc-content-rating">
                             <div class="cc-rating-icons">
@@ -203,8 +188,8 @@
                             </div>
                         </div>
                         <p class="card-text d-flex justify-content-center"
-                           th:text="${book.price} + &euro;"
-                           th:href="@{/shop/show/{id}(id=${book.id})}">Card
+                           th:href="@{/shop/show/{id}(id=${book.id})}"
+                           th:text="${book.price} + &euro;">Card
                             price</p>
                     </div>
                 </div>
