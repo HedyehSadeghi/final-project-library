@@ -32,6 +32,8 @@ INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Pray
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Religious book','https://www.lafeltrinelli.it/images/9788858153444_0_536_0_75.jpg',12.35,'Atti impuri');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('History book','https://m.media-amazon.com/images/I/91GaA-ZnofL._SY466_.jpg',12.25,'Nel nome di Roma');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('History book','https://www.scontolibri.com/pub/media/catalog/product/imgean/g/3/9/7/4/9788854194793g.jpg?width=700&height=1000&store=default&image-type=image',9.41,'I medici. Una dinastia al potere');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://www.lafeltrinelli.it/images/9788854174535_0_536_0_75.jpg',3.92,'Ossessioni, fobie e paranoia');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://www.lafeltrinelli.it/images/9791221208870_0_536_0_75.jpg',16.06,'Atomic habits. Piccole abitudini per grandi cambiamenti');
 
 --import client purchases--
 INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 5, '2024-01-24',1 );
@@ -115,6 +117,8 @@ INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id
 INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(5, 31);
 INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(7, 32);
 INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(7, 33);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(6, 34);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(6, 35);
 
 
 
