@@ -21,12 +21,6 @@ public class ClientPurchase {
     @NotNull(message = "cant be null")
     private int amount;
 
-    /*@Column(nullable = false)
-    @DecimalMin(value = "1.00", message = "Price can't be lower than 1.00")
-    @NotNull(message = "Price must not be empty")
-    private BigDecimal price;
-
-     */
     @ManyToOne
     private Book book;
 

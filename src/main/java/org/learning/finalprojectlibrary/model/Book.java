@@ -47,6 +47,14 @@ public class Book {
         return supplier - client;
     }
 
+    public int getAmountPurchases() {
+        int amount = 0;
+        for (ClientPurchase clientPurchase : clientPurchases) {
+            amount += clientPurchase.getAmount();
+        }
+        return amount;
+    }
+
     public Integer getId() {
         return id;
     }
