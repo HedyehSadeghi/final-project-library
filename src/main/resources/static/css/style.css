@@ -4,9 +4,13 @@
 
 nav{
     background-color: rgb(117, 25, 18);
-    font-family: 'PT Serif', serif;
+    /*font-family: 'PT Serif', serif;*/
+
+    /*font-family: 'Bebas Neue', sans-serif;*/
+    font-family: 'Nanum Myeongjo', serif;
+
     font-weight: bold;
-    font-size: 30px;
+    font-size: 33px;
     background: rgb(117, 25, 18);
     
 
