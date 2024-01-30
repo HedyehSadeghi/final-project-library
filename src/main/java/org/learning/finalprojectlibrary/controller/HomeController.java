@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.LocalDate;
+import java.time.temporal.TemporalAdjusters;
 import java.util.List;
 
 @Controller
@@ -21,12 +23,20 @@ public class HomeController {
 
     @GetMapping()
     private String index(Model model) {
-        
-
+        //top5 ever
         List<Book> bookListTop5 = bookRepository.findAll(Sort.by("ClientPurchases").descending());
         bookListTop5 = bookListTop5.subList(0, 5);
 
+        //top5 last month
+        LocalDate firstDayOfPreviousMonth = LocalDate.now().minusMonths(1).with(TemporalAdjusters.firstDayOfMonth());
+        LocalDate lastDayOfPreviousMonth = LocalDate.now().minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
+        
+        //top5 horror
+        List<Book> horrorTop5 = bookRepository.findBestSellersByCategory("Horror");
+
         model.addAttribute("bookListTop5", bookListTop5);
+
+        model.addAttribute("horrorTop5", horrorTop5);
 
         return "home/landing-page";
     }
