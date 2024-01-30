@@ -4,7 +4,8 @@
 
 nav{
     background-color: rgb(3, 90, 16);
-    font-family: 'Alegreya', serif;
+    font-family: 'PT Serif', serif;
+    font-weight: bold;
     font-size: 30px;
     background: rgb(33,161,65);
     background: linear-gradient(90deg, rgba(33,161,65,1) 0%, rgba(6,92,32,1) 38%, rgba(0,42,62,1) 100%);

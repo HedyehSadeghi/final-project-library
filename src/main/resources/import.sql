@@ -34,6 +34,7 @@ INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Hist
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('History book','https://www.scontolibri.com/pub/media/catalog/product/imgean/g/3/9/7/4/9788854194793g.jpg?width=700&height=1000&store=default&image-type=image',9.41,'I medici. Una dinastia al potere');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://www.lafeltrinelli.it/images/9788854174535_0_536_0_75.jpg',3.92,'Ossessioni, fobie e paranoia');
 INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Psychologic book','https://www.lafeltrinelli.it/images/9791221208870_0_536_0_75.jpg',16.06,'Atomic habits. Piccole abitudini per grandi cambiamenti');
+INSERT INTO db_final_library.books(description, photo, price, title)VALUES('Horror novel by Nikki St. Crowe','https://www.lafeltrinelli.it/images/9788804771210_0_536_0_75.jpg',13.30,'The never king');
 
 --import client purchases--
 INSERT INTO db_final_library.client_purchases(amount, `date`, book_id)VALUES( 5, '2024-01-24',1 );
@@ -118,6 +119,7 @@ INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id
 INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(7, 33);
 INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(6, 34);
 INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(6, 35);
+INSERT INTO db_final_library.categories_book_list(category_list_id, book_list_id)VALUES(9, 36);
 
 
 
@@ -168,3 +170,7 @@ INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book
 INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(120,'2022-11-19',1482 , 31, 2);
 INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(150,'2022-11-26',1837.5 , 32, 6);
 INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(132,'2023-06-27',1242.12 , 33, 2);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(132,'2023-05-25',1755.6 , 36, 2);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(140,'2022-12-27',548.8 , 34, 3);
+INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(60,'2022-06-27',963.6 , 35, 1);
+
