@@ -30,7 +30,9 @@
     </div>
 
     <div class="alert alert-info" th:if="${bookList.size() ==0}"> The list is empty</div>
-
+    <div class="d-flex justify-content-end"><a class="btn btn-success mx-2" th:href="@{/books/create}" role="button">Add
+        book</a>
+    </div>
     <table class="table" th:unless="${bookList.size() ==0}">
         <thead>
         <tr>
@@ -67,9 +69,6 @@
         </tr>
         </tbody>
     </table>
-    <div class="d-flex justify-content-start"><a class="btn btn-success mx-2" th:href="@{/books/create}" role="button">Add
-        book</a>
-    </div>
 
 
 </div>
