@@ -3,36 +3,7 @@
 <head th:replace="fragments/resources :: head('Book List')"></head>
 <body class="bg-light">
 <nav th:replace="fragments/navbar :: topNavbar('')"></nav>
-
-
-<div class="container my-5 w-50 d-flex justify-content-center align-items-center">
-    <div class="mx-2">
-        <a class="navbar-brand" th:href="@{/}" style="font-size: 40px; font-family: 'Nanum Myeongjo', serif;"
-        ><img class="mx-2"
-              th:src="@{/img/LA-Logo-libri-wiki.png}"
-              alt="Bootstrap" width="60" height="60">Paradise</a>
-
-    </div>
-
-    <!-- -----------Searchbar------------  -->
-    <div>
-        <form
-                id="book-search"
-                th:action="@{/shop}"
-                method="get"
-
-        >
-            <div class="input-group flex-nowrap">
-                <input class="form-control rounded-3" style="width:800px;" type="text" name="keyword" id="keyword"
-                       placeholder="Search book by title" th:value="${preloadSearch}">
-                <button type="submit" id="search-button" style="width:50px" class="btn btn-secondary rounded-4 mx-2"><i
-                        class="fa fa-search"></i></button>
-            </div>
-        </form>
-
-    </div>
-
-</div>
+<div th:replace="fragments/navbar :: searchbar"></div>
 
 <!-- Attributi : List<Book> bookListTop5, List<Book> horrorTop5,  fantasyTop5, fictionTop5, psychologyTop5, booksPurchasedLastMonth-->
 

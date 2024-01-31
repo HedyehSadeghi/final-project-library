@@ -1,10 +1,7 @@
 package org.learning.finalprojectlibrary.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -37,7 +34,16 @@ public class Book {
     private List<ClientPurchase> clientPurchases;
     @ManyToMany(mappedBy = "bookList")
     @OnDelete(action = OnDeleteAction.CASCADE)
-    List<Category> categoryList;
+    private List<Category> categoryList;
+
+    @Column(nullable = false)
+    @NotEmpty
+    private String author;
+
+    @Min(1)
+    @Max(5)
+    private int rating;
+
 
     @Override
     public boolean equals(Object o) {
@@ -83,6 +89,23 @@ public class Book {
         }
         return amount;
 
+    }
+
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 
     public Integer getId() {
