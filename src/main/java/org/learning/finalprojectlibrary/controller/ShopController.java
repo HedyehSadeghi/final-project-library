@@ -100,7 +100,7 @@ public class ShopController {
         }
 
         clientPurchaseRepository.save(clientPurchaseForm);
-        redirectAttributes.addFlashAttribute("redirectMessage", "Congratz, you successfully bought " + clientPurchaseForm.getAmount() + " copies of " + clientPurchaseForm.getBook().getTitle());
+        redirectAttributes.addFlashAttribute("redirectMessage", "Your copies of " + clientPurchaseForm.getBook().getTitle() + " were purchased correctly!");
         return "redirect:/shop";
     }
 }
