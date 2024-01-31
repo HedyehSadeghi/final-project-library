@@ -2,6 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments/resources :: head('create new purchase')"></head>
 <body>
+<style>
+    body {
+        background-image: url('/img/sfondo1.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
 <nav th:replace="fragments/navbar :: topNavbar('admin')"></nav>
 <div th:replace="fragments/navbar :: searchbar"></div>
 <div class="container">
