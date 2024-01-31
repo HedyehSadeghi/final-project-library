@@ -32,3 +32,8 @@ nav{
 #carouselExampleAutoplaying{
     box-sizing: content-box;
 }
+
+/* effetto zoom sulle immagini*/
+.img-hover:hover{
+            transform: scale(110%) !important;
+}
