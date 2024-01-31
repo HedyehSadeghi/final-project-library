@@ -28,25 +28,28 @@
         <div class="alert alert-info" th:if="${shopList.size() ==0}"> The list is empty</div>
 
 
-        <div class=" col-2 d-flex flex-column flex-shrink-0 p-3 bg-light">
-            <h3>Search for</h3>
+        <div class=" col-2 d-flex flex-column flex-shrink-0 p-3 bg-transparent">
+            <div>
+                <h3>Search for</h3>
 
-            <form
-                    id="search-book"
-                    method="get"
-                    th:action="@{/shop}">
+                <form
+                        id="search-book"
+                        method="get"
+                        th:action="@{/shop}">
 
-                <h5>Categories:</h5>
+                    <h5>Categories:</h5>
 
 
-                <div class="form-check" th:each="cat : ${categoryList}">
-                    <input class="form-check-input" name="category" th:id="|cat-${cat.id}|" th:value="${cat.id}"
-                           type="checkbox">
-                    <label class="form-check-label" th:for="|cat-${cat.id}|" th:text="${cat.name}"></label>
-                </div>
+                    <div class="form-check" th:each="cat : ${categoryList}">
+                        <input class="form-check-input" name="category" th:id="|cat-${cat.id}|" th:value="${cat.id}"
+                               type="checkbox">
+                        <label class="form-check-label" th:for="|cat-${cat.id}|" th:text="${cat.name}"></label>
+                    </div>
 
-                <button class="btn btn-primary" type="submit"> Search</button>
-            </form>
+                    <button class="btn btn-primary" type="submit"> Search</button>
+                </form>
+
+            </div>
 
 
         </div>
