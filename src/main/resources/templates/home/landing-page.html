@@ -99,10 +99,10 @@
         </div>
 
         <div class="row justify-content-center px-5 bg-light">
-            <h1 class="text-center my-4"> Best Sellers of All Time </h1>
+            <h1 class="text-center my-5"> Best Sellers of All Time </h1>
             <div class="col-2 my-2 " th:each="book: ${bookListTop5}">
-                <div class="card border border-0" style="width: 18rem;">
-                    <img alt="..." class="card-img-top rounded-bottom img-hover" height="400rem" th:src="${book.photo}">
+                <div class="card zoom-hover border border-0" style="width: 18rem;">
+                    <img alt="..." class="card-img-top rounded-bottom " height="400rem" th:src="${book.photo}">
                     <div class="card-body bg-light">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
                            th:href="@{/shop/show/{id}(id=${book.id})}"
@@ -153,10 +153,10 @@
         </div>
         <!-- -----------Card Group 2------------  -->
         <div class="row justify-content-center px-5 bg-white">
-            <h1 class="text-center my-4"> Best Sellers in the last month </h1>
+            <h1 class="text-center my-5"> Best Sellers in the last month </h1>
             <div class="col-2 my-2 " th:each="book: ${booksPurchasedLastMonth}">
-                <div class="card border border-0" style="width: 18rem;">
-                    <img alt="..." class="card-img-top rounded-bottom img-hover" height="400rem" th:src="${book.photo}">
+                <div class="card zoom-hover border border-0" style="width: 18rem;">
+                    <img alt="..." class="card-img-top rounded-bottom" height="400rem" th:src="${book.photo}">
                     <div class="card-body bg-white">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
                            th:href="@{/shop/show/{id}(id=${book.id})}"
@@ -208,10 +208,10 @@
         </div>
         <!-- -----------Card Group 3 ------------  -->
         <div class="row justify-content-center px-5 bg-light">
-            <h1 class="text-center my-4"> Best Sellers Fantasy </h1>
+            <h1 class="text-center my-5"> Best Sellers Fantasy </h1>
             <div class="col-2 my-2 " th:each="book: ${fantasyTop5}">
-                <div class="card border border-0" style="width: 18rem;">
-                    <img alt="..." class="card-img-top rounded-bottom img-hover" height="400rem" th:src="${book.photo}">
+                <div class="card zoom-hover border border-0" style="width: 18rem;">
+                    <img alt="..." class="card-img-top rounded-bottom" height="400rem" th:src="${book.photo}">
                     <div class="card-body bg-light">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
                            th:href="@{/shop/show/{id}(id=${book.id})}"
@@ -264,10 +264,10 @@
         </div>
         <!-- -----------Card Group 4------------  -->
         <div class="row justify-content-center px-5 bg-white">
-            <h1 class="text-center my-4"> Best Sellers Fiction </h1>
+            <h1 class="text-center my-5"> Best Sellers Fiction </h1>
             <div class="col-2 my-2 " th:each="book: ${fictionTop5}">
-                <div class="card border border-0" style="width: 18rem;">
-                    <img alt="..." class="card-img-top rounded-bottom img-hover" height="400rem" th:src="${book.photo}">
+                <div class="card zoom-hover border border-0" style="width: 18rem;">
+                    <img alt="..." class="card-img-top rounded-bottom" height="400rem" th:src="${book.photo}">
                     <div class="card-body bg-white">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
                            th:href="@{/shop/show/{id}(id=${book.id})}"
@@ -321,10 +321,10 @@
         <!-- -----------Card Group 5------------  -->
 
         <div class="row justify-content-center bg-light">
-            <h1 class="text-center my-4"> Best Sellers Horror</h1>
+            <h1 class="text-center my-5"> Best Sellers Horror</h1>
             <div class="col-2 my-2 " th:each="book: ${horrorTop5}">
-                <div class="card border border-0" style="width: 18rem;">
-                    <img alt="..." class="card-img-top rounded-bottom img-hover" height="400rem" th:src="${book.photo}">
+                <div class="card zoom-hover border border-0" style="width: 18rem;">
+                    <img alt="..." class="card-img-top rounded-bottom" height="400rem" th:src="${book.photo}">
                     <div class="card-body bg-light">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
                            th:href="@{/shop/show/{id}(id=${book.id})}"
@@ -378,10 +378,10 @@
 
         <!-- -----------Card Group 6------------  -->
         <div class="row justify-content-center bg-white">
-            <h1 class="text-center my-4"> Best Sellers Psychology</h1>
+            <h1 class="text-center my-5"> Best Sellers Psychology</h1>
             <div class="col-2 my-2 " th:each="book: ${psychologyTop5}">
-                <div class="card border border-0" style="width: 18rem;">
-                    <img alt="..." class="card-img-top rounded-bottom img-hover" height="400rem" th:src="${book.photo}">
+                <div class="card zoom-hover border border-0" style="width: 18rem;">
+                    <img alt="..." class="card-img-top rounded-bottom" height="400rem" th:src="${book.photo}">
                     <div class="card-body bg-white">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
                            th:href="@{/shop/show/{id}(id=${book.id})}"
