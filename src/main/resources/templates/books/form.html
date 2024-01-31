@@ -26,6 +26,16 @@
                 </ul>
             </div>
         </div>
+        <div class="col-12">
+            <label class="form-label" for="author">Author</label>
+            <input class="form-control" type="text" id="author" th:field="*{author}"
+                   th:errorClass="is-invalid">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('author')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('author')}" th:text="${err}"></li>
+                </ul>
+            </div>
+        </div>
 
         <div class="col-12">
             <label class="form-label" for="photo">URL</label>
@@ -57,6 +67,16 @@
                 </ul>
             </div>
         </div>
+        <div class="col-3">
+            <label class="form-label" for="rating">Rating</label>
+            <input class="form-control" type="number" id="rating" th:field="*{rating}"
+                   th:errorClass="is-invalid">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('rating')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('rating')}" th:text="${err}"></li>
+                </ul>
+            </div>
+        </div>
         <div class="col-12">
             <h4>Categories</h4>
             <div class="form-check" th:each="cat : ${categoryList}">
@@ -72,10 +92,10 @@
         </div>
 
 
-            <div class="col-12 mt-4">
-                <button type="submit" class="btn btn-primary mx-2">Save</button>
-                <a class="btn btn-danger mx-2" th:href="@{/books}">Cancel</a>
-            </div>
+        <div class="col-12 mt-4">
+            <button type="submit" class="btn btn-primary mx-2">Save</button>
+            <a class="btn btn-danger mx-2" th:href="@{/books}">Cancel</a>
+        </div>
 
     </form>
 </div>
