@@ -51,6 +51,50 @@ nav{
 
 }
 
+#placing1{
+    font-size: 7em;
+    color: rgb(117, 25, 18);
+    font-weight: 1000;
+    margin-left: 25px;
+    margin-bottom: 5px;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+
+ /*
+#triangle {
+  width: 0;
+  height: 0;
+  border-left: 164px solid white;  lato ipotenusa
+  border-top: 164px solid transparent;  lato opposto alla punta
+
+  border-bottom: -9px solid transparent;    lato adiacente alla punta
+  transform: rotate(0deg);
+
+  background-color: rgb(255,255,255);
+  background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5410539215686274) 49%);
+
+}
+*/
+
+#triangle {
+  width: 135px;
+  height: 135px;
+  background-color: rgb(255,255,255);
+  background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5410539215686274) 59%);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+
+}
+
+
+
+
+
+
+
+
 
 
 /* effetto zoom sulle immagini*/
