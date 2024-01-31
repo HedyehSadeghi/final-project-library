@@ -54,18 +54,40 @@
                            th:text="${book.title}"
                            th:href="@{/shop/show/{id}(id=${book.id})}">Card
                             title</a>
-                        <div class="cc-content-rating">
-                            <div class="cc-rating-icons">
-                                <div class="cc-rating cc-rating--5">
-                                <span> <i class="fa-solid fa-star" style="color: #FFD43B;"></i><i
-                                        class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star"
-                                                                                                style="color: #FFD43B;"></i><i
-                                        class="fa-solid fa-star" style="color: #FFD43B;"></i><i
-                                        class="fa-regular fa-star-half-stroke" style="color: #FFD43B;"></i> (sono tutte bugie)
-                                </span>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
 
-                                </div>
-                            </div>
+                             th:text="${book.author}"
+                        >Card author
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 1"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 2"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 3"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 4"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 5"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
                         </div>
 
                     </div>

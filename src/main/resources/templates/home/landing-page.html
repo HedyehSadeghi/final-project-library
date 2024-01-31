@@ -106,18 +106,40 @@
                            th:href="@{/shop/show/{id}(id=${book.id})}"
                            th:text="${book.title}">Card
                             title</a>
-                        <div class="cc-content-rating">
-                            <div class="cc-rating-icons">
-                                <div class="cc-rating cc-rating--5">
-                                    <div style="display: flex; align-items: flex-start; justify-content: center; height: 50px;">
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star-half-alt" style="color: #FFD43B;"></i>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+
+                             th:text="${book.author}"
+                        >Card author
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 1"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 2"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 3"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 4"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 5"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
                         </div>
                         <p class="card-text d-flex justify-content-center"
                            th:href="@{/shop/show/{id}(id=${book.id})}"
@@ -136,20 +158,43 @@
                     <div class="card-body bg-white">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
                            th:href="@{/shop/show/{id}(id=${book.id})}"
-                           th:text="${book.title}">Card
-                            title</a>
-                        <div class="cc-content-rating">
-                            <div class="cc-rating-icons">
-                                <div class="cc-rating cc-rating--5">
-                                    <div style="display: flex; align-items: flex-start; justify-content: center; height: 50px;">
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star-half-alt" style="color: #FFD43B;"></i>
-                                    </div>
-                                </div>
-                            </div>
+                           th:text="${book.title}"
+                        >Card title
+                        </a>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+
+                             th:text="${book.author}"
+                        >Card author
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 1"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 2"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 3"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 4"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 5"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
                         </div>
                         <p class="card-text d-flex justify-content-center"
                            th:href="@{/shop/show/{id}(id=${book.id})}"
@@ -170,18 +215,40 @@
                            th:href="@{/shop/show/{id}(id=${book.id})}"
                            th:text="${book.title}">Card
                             title</a>
-                        <div class="cc-content-rating">
-                            <div class="cc-rating-icons">
-                                <div class="cc-rating cc-rating--5">
-                                    <div style="display: flex; align-items: flex-start; justify-content: center; height: 50px;">
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star-half-alt" style="color: #FFD43B;"></i>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+
+                             th:text="${book.author}"
+                        >Card author
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 1"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 2"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 3"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 4"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 5"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
                         </div>
                         <p class="card-text d-flex justify-content-center"
                            th:href="@{/shop/show/{id}(id=${book.id})}"
@@ -204,18 +271,40 @@
                            th:href="@{/shop/show/{id}(id=${book.id})}"
                            th:text="${book.title}">Card
                             title</a>
-                        <div class="cc-content-rating">
-                            <div class="cc-rating-icons">
-                                <div class="cc-rating cc-rating--5">
-                                    <div style="display: flex; align-items: flex-start; justify-content: center; height: 50px;">
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star-half-alt" style="color: #FFD43B;"></i>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+
+                             th:text="${book.author}"
+                        >Card author
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 1"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 2"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 3"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 4"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 5"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
                         </div>
                         <p class="card-text d-flex justify-content-center"
                            th:href="@{/shop/show/{id}(id=${book.id})}"
@@ -239,18 +328,40 @@
                            th:href="@{/shop/show/{id}(id=${book.id})}"
                            th:text="${book.title}">Card
                             title</a>
-                        <div class="cc-content-rating">
-                            <div class="cc-rating-icons">
-                                <div class="cc-rating cc-rating--5">
-                                    <div style="display: flex; align-items: flex-start; justify-content: center; height: 50px;">
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star-half-alt" style="color: #FFD43B;"></i>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+
+                             th:text="${book.author}"
+                        >Card author
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 1"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 2"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 3"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 4"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 5"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
                         </div>
                         <p class="card-text d-flex justify-content-center"
                            th:href="@{/shop/show/{id}(id=${book.id})}"
@@ -274,18 +385,40 @@
                            th:href="@{/shop/show/{id}(id=${book.id})}"
                            th:text="${book.title}">Card
                             title</a>
-                        <div class="cc-content-rating">
-                            <div class="cc-rating-icons">
-                                <div class="cc-rating cc-rating--5">
-                                    <div style="display: flex; align-items: flex-start; justify-content: center; height: 50px;">
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fas fa-star-half-alt" style="color: #FFD43B;"></i>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+
+                             th:text="${book.author}"
+                        >Card author
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 1"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 2"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 3"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 4"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </div>
+                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
+                             th:if="${book.rating} == 5"
+                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
                         </div>
                         <p class="card-text d-flex justify-content-center"
                            th:href="@{/shop/show/{id}(id=${book.id})}"
