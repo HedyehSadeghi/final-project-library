@@ -178,3 +178,15 @@ INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book
 INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(140,'2022-12-27',548.8 , 34, 3);
 INSERT INTO db_final_library.supplier_book_purchases(amount, `date`, price, book_id, supplier_id)VALUES(60,'2022-06-27',963.6 , 35, 1);
 
+
+
+-- import users
+INSERT INTO db_final_library.`role`(name)VALUES('ADMIN');
+INSERT INTO db_final_library.`role`(name)VALUES('USER');
+
+INSERT INTO db_final_library.library_user(email, first_name, last_name, password)VALUES('anna@gmail.com', 'Anna', 'Rossi', '{noop}anna');
+INSERT INTO db_final_library.library_user(email, first_name, last_name, password)VALUES('giulio@gmail.com', 'Giulio', 'Rossi', '{noop}giulio');
+
+INSERT INTO db_final_library.library_user_role_set(library_user_id, role_set_name)VALUES(1, 'ADMIN');
+INSERT INTO db_final_library.library_user_role_set(library_user_id, role_set_name)VALUES(1, 'USER');
+INSERT INTO db_final_library.library_user_role_set(library_user_id, role_set_name)VALUES(2, 'USER');
