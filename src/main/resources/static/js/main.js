@@ -11,8 +11,9 @@ function changePrice(event){
 
 
     var newPrice= amount * price;
+    var roundedPrice = newPrice.toFixed(2);
 
-    document.getElementById("totalPrice").innerHTML= newPrice;
+    document.getElementById("totalPrice").innerHTML= roundedPrice;
 
     console.log(newPrice);
 
