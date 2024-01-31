@@ -64,6 +64,61 @@
             </button>
         </div>
         <!-- -----------Card Group 1 ------------  -->
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <!-- Prima colonna più grande -->
+                <div class="col-6 mt-2 ">
+                    <div class="position-relative">
+                        <!-- Sovrapposizione con testo "1°" -->
+                        <div class="position-absolute top-0 start-0 p-5 bg-danger text-light opacity-50 ms-5 rounded-4">
+                            <h4>1°</h4>
+                        </div>
+
+                        <!-- Contenuto della prima colonna -->
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img alt="..." class="card-img-top w-50"
+                                 th:src="${bookListTop5[0].photo}">
+                        </div>
+                        <div class="card-body"></div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a class="card-link text-dark"
+                                                           th:href="@{/shop/show/{id}(id=${bookListTop5[0].id})}"
+                                                           th:text="${bookListTop5[0].title}"></a></li>
+                            <li class="list-group-item">di Josè Saramago</li>
+                            <div style="display: flex; align-items: flex-start; justify-content: center; height: 25px;">
+                                <i class="fas fa-star" style="color: #FFD43B;"></i>
+                                <i class="fas fa-star" style="color: #FFD43B;"></i>
+                                <i class="fas fa-star" style="color: #FFD43B;"></i>
+                                <i class="fas fa-star" style="color: #FFD43B;"></i>
+                                <i class="fas fa-star-half-alt" style="color: #FFD43B;"></i>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Seconda colonna più piccola -->
+                <div class="col-3 mt-2">
+
+                    <div class="row my-2" th:each="book, stato :${bookListTop5}" th:if="${stato.index>0}">
+                        <div class="col-3">
+                            <img alt="..."
+                                 height="190em"
+                                 th:src="${book.photo}">
+                        </div>
+                        <div class="col-9 d-flex align-items-center">
+                            <ul class="list-unstyled">
+                                <li><a class="card-link text-dark"
+                                       th:href="@{/shop/show/{id}(id=${book.id})}"
+                                       th:text="${book.title}"></a>
+                                </li>
+                                <li>Autore:</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row justify-content-center px-5 bg-light">
             <h1 class="text-center my-4"> Best Sellers of All Time </h1>
             <div class="col-2 my-2 " th:each="book: ${bookListTop5}">
