@@ -1,29 +1,33 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/resources :: head('Book List')"></head>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Details</title>
-</head>
 <body>
+<nav th:replace="fragments/navbar :: topNavbar('admin')"></nav>
 <div class="container">
-    <h1 th:text="${book.title}"></h1>
-    <ul th:each="cat : ${categoryList}">
-        <li th:text="${cat.name}" class="col-9"></li>
+
+    <h1 class="text-danger fw-bold my-4">Detail</h1>
+    <h3 class="fw-bold text-decoration-underline mb-2" th:text="${book.title}"></h3>
+    <h6>Category:</h6>
+    <ul class="ps-0 my-0 list-unstyled" th:each="cat : ${book.categoryList}">
+        <li th:text="${cat.name}" class="col-9 list-unstyled"></li>
     </ul>
     <hr>
-    <img th:src="${book.photo}" alt="">
-    <h3>Description:</h3>
-    <p th:text="${book.description}"></p>
-    <h3>Price:</h3>
-    <p th:text="${book.price}"></p>
-    <h3>Author:</h3>
-    <p th:text="${book.author}"></p>
-    <h3>Rating:</h3>
-    <p th:text="${book.rating}"></p>
+    <div class="row">
+        <div class="col-6">
+            <img class="w-50" th:src="${book.photo}" alt="">
+        </div>
+        <div class="col-6">
+            <h3>Description:</h3>
+            <p th:text="${book.description}"></p>
+            <h3>Price:</h3>
+            <p th:text="${book.price}"></p>
+            <h3>Author:</h3>
+            <p th:text="${book.author}"></p>
+            <h3>Rating:</h3>
+            <p th:text="${book.rating}"></p>
+        </div>
+    </div>
+
     <div>
         <a class="btn btn-primary" th:href="@{/books}">Book list</a>
     </div>
