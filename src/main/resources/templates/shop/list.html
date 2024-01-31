@@ -46,8 +46,8 @@
         <div class="col-10 d-flex justify-content-between flex-wrap">
             <div class="col-4 my-2 " th:each="book: ${shopList}">
 
-                <div th:unless="${shopList.size() ==0}" class="card" style="width: 18rem;">
-                    <img th:src="${book.photo}" class="card-img-top" alt="..." height="400rem">
+                <div th:unless="${shopList.size() ==0}" class="card border border-0" style="width: 18rem;">
+                    <img th:src="${book.photo}" class="card-img-top rounded-bottom img-hover" alt="..." height="400rem">
                     <div class="card-body">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold"
                            th:text="${book.title}"
