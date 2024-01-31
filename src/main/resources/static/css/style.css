@@ -21,6 +21,21 @@ nav{
 
 
 /* .classe */
+.title-best-sellers{
+    font-size: 19px;
+    color: red;
+    text-decoration: none;
+    text-decoration-thickness: 2px;
+}
+
+.placing-best-sellers{
+    font-size: 3em;
+    color: rgb(117, 25, 18);
+    font-weight: 700;
+     position: absolute;
+    top: 0%;
+    left: 19%;
+}
 
 
 
@@ -62,6 +77,7 @@ nav{
     left: 40%;
     transform: translate(-50%, -50%);
 }
+
 
  /*
 #triangle {

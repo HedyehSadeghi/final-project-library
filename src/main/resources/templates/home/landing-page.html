@@ -48,11 +48,11 @@
 
             <div class="row justify-content-center">
                 <div class="d-flex justify-content-center my-5">
-                    <h1 class="fw-bold">Best Seller</h1>
+                    <h1 style="font-size: 4em;">Best Seller</h1>
                 </div>
 
                 <!-- Prima colonna -->
-                <div class="col-6 mt-2" id="first-best-seller">
+                <div class="col-7 mt-2" id="first-best-seller">
                     <div class="position-relative">
                         <!-- Sovrapposizione con testo "1°" -->
                         <div class="position-absolute top-0 start-0 rounded-4">
@@ -61,12 +61,12 @@
                             <h1 id="placing1">1°</h1>
                         </div>
 
-                        <div class="d-flex justify-content-center align-items-center mt-4 mb-5">
+                        <div class="d-flex justify-content-center align-items-center mt-5 mb-5">
                             <img alt="..." class="card-img-top w-50"
                                  th:src="${bookListTop5[0].photo}">
                         </div>
 
-                        <div>
+                        <div class="pb-3 pt-5">
                             <div class="d-flex justify-content-center">
                                 <a th:href="@{/shop/show/{id}(id=${bookListTop5[0].id})}"
                                    th:text="${bookListTop5[0].title}"
@@ -80,29 +80,42 @@
                                 <th:block th:each="i: ${#numbers.sequence(1, bookListTop5[0].rating)}">
                                     <i class="fas fa-star" style="color: #FFD43B;"></i>
                                 </th:block>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
                 <!-- Seconda colonna-->
-                <div class="col-3 mt-2">
+                <div class="col-4 mt-2 ms-4">
 
-                    <div class="row my-2" th:each="book, stato :${bookListTop5}" th:if="${stato.index>0}">
-                        <div class="col-3">
+                    <div class="row py-2" th:each="book, stato :${bookListTop5}"
+                         th:if="${stato.index>0}">
+                        <div class="col-4">
                             <img alt="..."
-                                 height="150em"
-                                 th:src="${book.photo}">
+                                 th:src="${book.photo}" height="185em"
+                                 width="138em">
                         </div>
-                        <div class="col-9 d-flex align-items-center">
-                            <ul class="list-unstyled">
-                                <li><a class="card-link text-dark"
-                                       th:href="@{/shop/show/{id}(id=${book.id})}"
-                                       th:text="${book.title}"></a>
-                                </li>
-                                <li>Autore:</li>
-                            </ul>
+                        <div class="col-8 d-flex align-items-center  ps-5 position-relative">
+
+                            <h3 th:text="${stato.index + 1}"
+                                class="placing-best-sellers">
+                            </h3>
+
+                            <div>
+                                <ul class="list-unstyled ps-5">
+                                    <li><a th:href="@{/shop/show/{id}(id=${book.id})}"
+                                           th:text="${book.title}"
+                                           class="title-best-sellers"></a>
+                                    </li>
+                                    <li th:text="${book.author}"></li>
+                                    <li>
+                                        <th:block th:each="i: ${#numbers.sequence(1, book.rating)}">
+                                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                                        </th:block>
+                                    </li>
+                                </ul>
+
+                            </div>
+
                         </div>
                     </div>
                 </div>
