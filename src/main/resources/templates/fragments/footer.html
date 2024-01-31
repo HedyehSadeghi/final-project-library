@@ -1,7 +1,7 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<footer th:fragment="footer"
-        class="row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-2 pb-1 mt-5 mb-2 border-top d-flex justify-content-center">
+<!--<html>
+<link href="style.css" rel="stylesheet">
+<footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-2 pb-1 mt-5 mb-2 border-top d-flex justify-content-center"
+        th:fragment="footer">
     <div class="col mb-3 d-flex align-items-center">
         <ul>
             <li class="list-unstyled"><i class="fa-solid fa-book"></i></li>
@@ -16,9 +16,9 @@
     <div class="col mb-3">
         <h5>Library</h5>
         <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a th:href="@{/}" class="nav-link p-0 text-body-secondary">Home</a></li>
-            <li class="nav-item mb-2"><a th:href="@{/shop}" class="nav-link p-0 text-body-secondary">Shop</a></li>
-            <li class="nav-item mb-2"><a th:href="@{/contacts}" class="nav-link p-0 text-body-secondary">Contacts</a>
+            <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" th:href="@{/}">Home</a></li>
+            <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" th:href="@{/shop}">Shop</a></li>
+            <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" th:href="@{/contacts}">Contacts</a>
             </li>
         </ul>
     </div>
@@ -30,15 +30,65 @@
             </li>
             <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" th:href="@{/categories}">Category
                 List</a></li>
-            <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" th:href="@{/clients/purchases}">Client
-                purchases</a></li>
-            <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" th:href="@{/books/warehouse}">Warehouse</a>
-            </li>
-            <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" th:href="@{/suppliers/purchases}">Supplier
-                purchases</a></li>
+
         </ul>
     </div>
 
 </footer>
 
+
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Footer Design</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"
+          type="text/css">
+</head>
+<body>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">affiliate program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>online shop</h4>
+                <ul>
+                    <li><a href="#">book</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
 </html>
