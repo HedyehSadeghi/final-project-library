@@ -3,17 +3,25 @@
 
 <head th:replace="fragments/resources :: head('Book List')"></head>
 <body>
+<style>
+    body {
+        background-image: url('/img/sfondo1.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
 <nav th:replace="fragments/navbar :: topNavbar('shop')"></nav>
 <div th:replace="fragments/navbar :: searchbar"></div>
 <div class="container">
     <!-- Attributi:  List<Book> shopList,   String preloadSearch, List<Category> categoryList-->
 
     <div class="row">
-        <div th:if="${redirectMessage != null}"
-             class="alert alert-success alert-dismissible fade show mt-4"
-             role="alert">
+        <div class="alert alert-success alert-dismissible fade show mt-4"
+             role="alert"
+             th:if="${redirectMessage != null}">
             <div th:text="${redirectMessage}"></div>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button"></button>
         </div>
 
 
@@ -32,12 +40,12 @@
 
 
                 <div class="form-check" th:each="cat : ${categoryList}">
-                    <input class="form-check-input" type="checkbox" th:value="${cat.id}" th:id="|cat-${cat.id}|"
-                           name="category">
+                    <input class="form-check-input" name="category" th:id="|cat-${cat.id}|" th:value="${cat.id}"
+                           type="checkbox">
                     <label class="form-check-label" th:for="|cat-${cat.id}|" th:text="${cat.name}"></label>
                 </div>
 
-                <button type="submit" class="btn btn-primary"> Search</button>
+                <button class="btn btn-primary" type="submit"> Search</button>
             </form>
 
 
@@ -47,12 +55,12 @@
         <div class="col-10 d-flex justify-content-between flex-wrap">
             <div class="col-4 my-2 " th:each="book: ${shopList}">
 
-                <div th:unless="${shopList.size() ==0}" class="card border border-0" style="width: 18rem;">
-                    <img th:src="${book.photo}" class="card-img-top rounded-bottom img-hover" alt="..." height="400rem">
+                <div class="card border border-0" style="width: 18rem;" th:unless="${shopList.size() ==0}">
+                    <img alt="..." class="card-img-top rounded-bottom img-hover" height="400rem" th:src="${book.photo}">
                     <div class="card-body">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold"
-                           th:text="${book.title}"
-                           th:href="@{/shop/show/{id}(id=${book.id})}">Card
+                           th:href="@{/shop/show/{id}(id=${book.id})}"
+                           th:text="${book.title}">Card
                             title</a>
                         <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
 
@@ -95,7 +103,7 @@
                         <li class="list-group-item" th:text="|${book.price} euro|"></li>
                     </ul>
                     <div class="card-body">
-                        <a class="btn btn-success" th:href="@{/shop/buy/{id}(id=${book.id})}" role="button">Buy now</a>
+                        <a class="btn btn-success" role="button" th:href="@{/shop/buy/{id}(id=${book.id})}">Buy now</a>
                     </div>
                 </div>
 
@@ -109,7 +117,7 @@
 
 
 <footer th:replace="fragments/footer :: footer"></footer>
-<script type="text/javascript" th:src="@{/js/toast.js}"></script>
+<script th:src="@{/js/toast.js}" type="text/javascript"></script>
 <th:block th:replace="fragments/resources :: script"></th:block>
 </body>
 </html>
