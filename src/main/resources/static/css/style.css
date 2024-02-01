@@ -1,6 +1,13 @@
-/*  *    */
+/* ---------- *  ---------------*/
 
-/* tag*/
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+
+/* --------------tag -----------------*/
 
 nav{
     background-color: rgb(117, 25, 18);
@@ -16,11 +23,21 @@ nav{
 }
 
 
+body{
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+}
+
+ul{
+  list-style: none;
+}
 
 
 
 
-/* .classe */
+
+/* --------------.CLASSE -------------*/
+
 .title-best-sellers{
     font-size: 19px;
     color: red;
@@ -38,107 +55,6 @@ nav{
 }
 
 
-
-
-/* #id */
-#search-button{
-    background: rgb(117, 25, 18);
- }
-
-#carouselExampleAutoplaying{
-    box-sizing: content-box;
-}
-
-#client-font{
-     /*font-family: 'Nanum Myeongjo', serif;*/
-     font-family: 'EB Garamond', serif;
-}
-
-#first-best-seller{
-    background: rgb(220,220,220);
-}
-
-#book-title-best-sellers{
-    font-size: 2em;
-    color: red;
-    text-decoration: none;
-    text-decoration-thickness: 2px;
-
-}
-
-#placing1{
-    font-size: 7em;
-    color: rgb(117, 25, 18);
-    font-weight: 1000;
-    margin-left: 25px;
-    margin-bottom: 5px;
-    position: absolute;
-    top: 40%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-}
-
-
- /*
-#triangle {
-  width: 0;
-  height: 0;
-  border-left: 164px solid white;  lato ipotenusa
-  border-top: 164px solid transparent;  lato opposto alla punta
-
-  border-bottom: -9px solid transparent;    lato adiacente alla punta
-  transform: rotate(0deg);
-
-  background-color: rgb(255,255,255);
-  background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5410539215686274) 49%);
-
-}
-*/
-
-#triangle {
-  width: 135px;
-  height: 135px;
-  background-color: rgb(255,255,255);
-  background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5410539215686274) 59%);
-  clip-path: polygon(0 0, 100% 100%, 0 100%);
-
-}
-
-
-
-
-
-
-
-
-
-
-/* effetto zoom sulle immagini*/
-.zoom-hover:hover{
-            transform: scale(115%) !important;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-body{
-  line-height: 1.5;
-  font-family: 'Poppins', sans-serif;
-}
-*{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-}
-.container{
-  max-width: 1170px;
-  margin:auto;
-}
-.row{
-  display: flex;
-  flex-wrap: wrap;
-}
-ul{
-  list-style: none;
-}
 .footer{
   background-color:rgba(194,42,30);
     padding: 70px 0;
@@ -198,6 +114,90 @@ ul{
   color: #24262b;
   background-color: #ffffff;
 }
+
+.container{
+  max-width: 1170px;
+  margin:auto;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+/* effetto zoom sulle immagini*/
+.zoom-hover:hover{
+            transform: scale(115%) !important;
+}
+
+
+/* -------------- #id  ---------------------*/
+
+#search-button{
+    background: rgb(117, 25, 18);
+ }
+
+#carouselExampleAutoplaying{
+    box-sizing: content-box;
+}
+
+#client-font{
+     /*font-family: 'Nanum Myeongjo', serif;*/
+     font-family: 'EB Garamond', serif;
+}
+
+#first-best-seller{
+    background: rgb(220,220,220);
+}
+
+#book-title-best-sellers{
+    font-size: 2em;
+    color: red;
+    text-decoration: none;
+    text-decoration-thickness: 2px;
+
+}
+
+#placing1{
+    font-size: 7em;
+    color: rgb(117, 25, 18);
+    font-weight: 1000;
+    margin-left: 25px;
+    margin-bottom: 5px;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+
+ /*
+#triangle {
+  width: 0;
+  height: 0;
+  border-left: 164px solid white;  lato ipotenusa
+  border-top: 164px solid transparent;  lato opposto alla punta
+
+  border-bottom: -9px solid transparent;    lato adiacente alla punta
+  transform: rotate(0deg);
+
+  background-color: rgb(255,255,255);
+  background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5410539215686274) 49%);
+
+}
+*/
+
+#triangle {
+  width: 135px;
+  height: 135px;
+  background-color: rgb(255,255,255);
+  background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5410539215686274) 59%);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+
+}
+
+/*-----------------*/
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /*responsive*/
 @media(max-width: 767px){
