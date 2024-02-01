@@ -52,7 +52,7 @@
                 </div>
 
                 <!-- Prima colonna -->
-                <div class="col-7 mt-2" id="first-best-seller">
+                <div class="col-lg-7 col-md-7 mt-2" id="first-best-seller">
                     <div class="position-relative">
                         <!-- Sovrapposizione con testo "1°" -->
                         <div class="position-absolute top-0 start-0 rounded-4">
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <!-- Seconda colonna-->
-                <div class="col-4 mt-2 ms-4">
+                <div class="col-lg-4 col-md-4 mt-2 ms-4">
 
                     <div class="row py-2" th:each="book, stato :${bookListTop5}"
                          th:if="${stato.index>0}">
@@ -94,7 +94,7 @@
                                  th:src="${book.photo}" height="185em"
                                  width="138em">
                         </div>
-                        <div class="col-8 d-flex align-items-center  ps-5 position-relative">
+                        <div class="col-lg-8 col-md-8 d-flex align-items-center  ps-5 position-relative">
 
                             <h3 th:text="${stato.index + 1}"
                                 class="placing-best-sellers">
@@ -124,7 +124,7 @@
         <!-- -----------best seller LAST MONTH------------  -->
         <div class="row justify-content-center bg-white">
             <h1 class="text-center my-5" style="font-size: 3em;"> Best Sellers in the last month </h1>
-            <div class="col-2 my-2 " th:each="book: ${booksPurchasedLastMonth}">
+            <div class="col-lg-2 col-md-2 my-2 " th:each="book: ${booksPurchasedLastMonth}">
                 <div class="card bg-opacity-10 bg-secondary zoom-hover border border-0" style="width: 18rem;">
                     <img alt="..." class="card-img-top rounded-bottom" height="400rem" th:src="${book.photo}">
                     <div class="card-body">
@@ -158,7 +158,7 @@
         <!-- -----------best seller FANTASY ------------  -->
         <div class="row justify-content-center bg-light">
             <h1 class="text-center my-5" style="font-size: 3em;"> Best Sellers Fantasy </h1>
-            <div class="col-2 my-2 " th:each="book: ${fantasyTop5}">
+            <div class="col-lg-2 col-md-2 my-2 " th:each="book: ${fantasyTop5}">
                 <div class="card bg-opacity-10 bg-secondary zoom-hover border border-0" style="width: 18rem;">
                     <img alt="..." class="card-img-top rounded-bottom" height="400rem" th:src="${book.photo}">
                     <div class="card-body">
@@ -190,7 +190,7 @@
         <!-- -----------best seller FANTASY------------  -->
         <div class="row justify-content-center bg-white">
             <h1 class="text-center my-5" style="font-size: 3em;"> Best Sellers Fiction </h1>
-            <div class="col-2 my-2 " th:each="book: ${fictionTop5}">
+            <div class="col-lg-2 col-md-2 my-2 " th:each="book: ${fictionTop5}">
                 <div class="card bg-opacity-10 bg-secondary zoom-hover border border-0" style="width: 18rem;">
                     <img alt="..." class="card-img-top rounded-bottom" height="400rem" th:src="${book.photo}">
                     <div class="card-body">
@@ -224,7 +224,7 @@
         <!-- -----------lista cards BEST SELLER HORROR ------------  -->
         <div class="row justify-content-center bg-light">
             <h1 class="text-center my-5" style="font-size: 3em;"> Best Sellers Horror</h1>
-            <div class="col-2 my-2 " th:each="book: ${horrorTop5}">
+            <div class="col-lg-2 col-md-2 my-2 " th:each="book: ${horrorTop5}">
                 <div class="card bg-opacity-10 bg-secondary zoom-hover border border-0" style="width: 18rem;">
                     <img alt="..." class="card-img-top rounded-bottom" height="400rem" th:src="${book.photo}">
                     <div class="card-body">
@@ -257,7 +257,7 @@
         <!-- -----------lista cards BEST SELLER PSICOLOGIA ------------  -->
         <div class="row justify-content-center bg-white">
             <h1 class="text-center my-5" style="font-size: 3em;"> Best Sellers Psychology</h1>
-            <div class="col-2 my-2 " th:each="book: ${psychologyTop5}">
+            <div class="col-lg-2 col-md-2 my-2 " th:each="book: ${psychologyTop5}">
                 <div class="card bg-opacity-10 bg-secondary zoom-hover border border-0" style="width: 18rem;">
                     <img alt="..." class="card-img-top rounded-bottom" height="400rem" th:src="${book.photo}">
                     <div class="card-body">
