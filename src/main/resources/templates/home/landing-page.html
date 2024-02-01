@@ -113,9 +113,7 @@
                                         </th:block>
                                     </li>
                                 </ul>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -123,7 +121,7 @@
         </div>
 
 
-        <!-- -----------Card Group 2------------  -->
+        <!-- -----------best seller LAST MONTH------------  -->
         <div class="row justify-content-center bg-white">
             <h1 class="text-center my-5" style="font-size: 3em;"> Best Sellers in the last month </h1>
             <div class="col-2 my-2 " th:each="book: ${booksPurchasedLastMonth}">
@@ -155,7 +153,9 @@
                 </div>
             </div>
         </div>
-        <!-- -----------Card Group 3 ------------  -->
+
+
+        <!-- -----------best seller FANTASY ------------  -->
         <div class="row justify-content-center bg-light">
             <h1 class="text-center my-5" style="font-size: 3em;"> Best Sellers Fantasy </h1>
             <div class="col-2 my-2 " th:each="book: ${fantasyTop5}">
@@ -187,7 +187,7 @@
             </div>
 
         </div>
-        <!-- -----------Card Group 4------------  -->
+        <!-- -----------best seller FANTASY------------  -->
         <div class="row justify-content-center bg-white">
             <h1 class="text-center my-5" style="font-size: 3em;"> Best Sellers Fiction </h1>
             <div class="col-2 my-2 " th:each="book: ${fictionTop5}">
@@ -219,8 +219,9 @@
             </div>
 
         </div>
-        <!-- -----------lista cards BEST SELLER HORROR ------------  -->
 
+
+        <!-- -----------lista cards BEST SELLER HORROR ------------  -->
         <div class="row justify-content-center bg-light">
             <h1 class="text-center my-5" style="font-size: 3em;"> Best Sellers Horror</h1>
             <div class="col-2 my-2 " th:each="book: ${horrorTop5}">
