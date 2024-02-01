@@ -61,11 +61,11 @@
                     <span th:text="*{getPrice()}" id="price" class="visually-hidden"> </span>
                     <p><strong>Prezzo totale: <span id="totalPrice" th:text="*{getPrice()}"></span>€</strong></p>
                 </div>
+                <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-success">Save</button>
+                    <a class="btn btn-danger" th:href="@{/shop}">Back to list</a>
+                </div>
             </form>
-            <div class="col-12 mt-4">
-                <button type="submit" class="btn btn-success">Save</button>
-                <a class="btn btn-danger" th:href="@{/shop}">Back to list</a>
-            </div>
         </div>
     </div>
 </div>
