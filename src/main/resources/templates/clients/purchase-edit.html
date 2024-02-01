@@ -20,7 +20,6 @@
             <input th:field="*{book}" type="hidden">
         </div>
         <div class="col-md-6">
-            <label class="form-label">Price</label>
             <input type="hidden"
                    th:field="*{price}"
                    th:errorClass="is-invalid">
@@ -31,7 +30,7 @@
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-12 w-25">
             <label for="date" class="form-label">Date</label>
             <input type="date" class="form-control" id="date"
                    th:field="*{date}"
@@ -43,7 +42,7 @@
             </div>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 w-25">
             <label for="amount" class="form-label">Amount</label>
             <input class="form-control" type="number" id="amount" th:field="*{amount}"
                    th:errorClass="is-invalid" min="1" max="1000000000">
