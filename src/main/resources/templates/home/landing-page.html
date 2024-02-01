@@ -125,7 +125,7 @@
         <div class="row justify-content-center bg-white">
             <h1 class="text-center my-5" style="font-size: 3em;"> Best Sellers in the last month </h1>
             <div class="col-lg-2 col-md-2 my-2 " th:each="book: ${booksPurchasedLastMonth}">
-                <div class="card bg-opacity-10 bg-secondary zoom-hover border border-0" style="width: 18rem;">
+                <div class="card zoom-hover border border-0" style="width: 18rem;">
                     <img alt="..." class="card-img-top rounded-bottom" height="400rem" th:src="${book.photo}">
                     <div class="card-body">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
@@ -159,7 +159,7 @@
         <div class="row justify-content-center bg-light">
             <h1 class="text-center my-5" style="font-size: 3em;"> Best Sellers Fantasy </h1>
             <div class="col-lg-2 col-md-2 my-2 " th:each="book: ${fantasyTop5}">
-                <div class="card bg-opacity-10 bg-secondary zoom-hover border border-0" style="width: 18rem;">
+                <div class="card zoom-hover border border-0 bg-transparent" style="width: 18rem;">
                     <img alt="..." class="card-img-top rounded-bottom" height="400rem" th:src="${book.photo}">
                     <div class="card-body">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
@@ -191,7 +191,7 @@
         <div class="row justify-content-center bg-white">
             <h1 class="text-center my-5" style="font-size: 3em;"> Best Sellers Fiction </h1>
             <div class="col-lg-2 col-md-2 my-2 " th:each="book: ${fictionTop5}">
-                <div class="card bg-opacity-10 bg-secondary zoom-hover border border-0" style="width: 18rem;">
+                <div class="card zoom-hover border border-0 " style="width: 18rem;">
                     <img alt="..." class="card-img-top rounded-bottom" height="400rem" th:src="${book.photo}">
                     <div class="card-body">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
@@ -225,7 +225,7 @@
         <div class="row justify-content-center bg-light">
             <h1 class="text-center my-5" style="font-size: 3em;"> Best Sellers Horror</h1>
             <div class="col-lg-2 col-md-2 my-2 " th:each="book: ${horrorTop5}">
-                <div class="card bg-opacity-10 bg-secondary zoom-hover border border-0" style="width: 18rem;">
+                <div class="card zoom-hover border border-0 bg-transparent" style="width: 18rem;">
                     <img alt="..." class="card-img-top rounded-bottom" height="400rem" th:src="${book.photo}">
                     <div class="card-body">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
@@ -258,7 +258,7 @@
         <div class="row justify-content-center bg-white">
             <h1 class="text-center my-5" style="font-size: 3em;"> Best Sellers Psychology</h1>
             <div class="col-lg-2 col-md-2 my-2 " th:each="book: ${psychologyTop5}">
-                <div class="card bg-opacity-10 bg-secondary zoom-hover border border-0" style="width: 18rem;">
+                <div class="card zoom-hover border border-0" style="width: 18rem;">
                     <img alt="..." class="card-img-top rounded-bottom" height="400rem" th:src="${book.photo}">
                     <div class="card-body">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold mb-1"
