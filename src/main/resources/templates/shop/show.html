@@ -24,16 +24,13 @@
         </div>
         <div class="col-8">
             <h1 th:text="${book.title}"></h1>
+            <h6 class="fw-bold" th:text="${book.author}"></h6>
             <div class="cc-content-rating">
                 <div class="cc-rating-icons">
                     <div class="cc-rating cc-rating--5">
-                                <span> <i class="fa-solid fa-star" style="color: #FFD43B;"></i><i
-                                        class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star"
-                                                                                                style="color: #FFD43B;"></i><i
-                                        class="fa-solid fa-star" style="color: #FFD43B;"></i><i
-                                        class="fa-regular fa-star-half-stroke" style="color: #FFD43B;"></i> (sono tutte bugie)
-                                </span>
-
+                        <th:block th:each="i: ${#numbers.sequence(1, book.rating)}">
+                            <i class="fas fa-star" style="color: #FFD43B;"></i>
+                        </th:block>
                     </div>
                         <h4 th:text="|${book.price} euro|"></h4>
                     <div class="col-4">
