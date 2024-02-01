@@ -72,37 +72,11 @@
                              th:text="${book.author}"
                         >Card author
                         </div>
-                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
-                             th:if="${book.rating} == 1"
-                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
+                        <div class="d-flex justify-content-center my-2">
+                            <th:block th:each="i: ${#numbers.sequence(1, book.rating)}">
+                                <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            </th:block>
                         </div>
-                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
-                             th:if="${book.rating} == 2"
-                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
-                            <i class="fas fa-star" style="color: #FFD43B;"></i>
-                        </div>
-                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
-                             th:if="${book.rating} == 3"
-                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
-                            <i class="fas fa-star" style="color: #FFD43B;"></i>
-                            <i class="fas fa-star" style="color: #FFD43B;"></i>
-                        </div>
-                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
-                             th:if="${book.rating} == 4"
-                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
-                            <i class="fas fa-star" style="color: #FFD43B;"></i>
-                            <i class="fas fa-star" style="color: #FFD43B;"></i>
-                            <i class="fas fa-star" style="color: #FFD43B;"></i>
-                        </div>
-                        <div class="card-text d-flex justify-content-center text-decoration-none fw-bold mb-1"
-                             th:if="${book.rating} == 5"
-                        ><i class="fas fa-star" style="color: #FFD43B;"></i>
-                            <i class="fas fa-star" style="color: #FFD43B;"></i>
-                            <i class="fas fa-star" style="color: #FFD43B;"></i>
-                            <i class="fas fa-star" style="color: #FFD43B;"></i>
-                            <i class="fas fa-star" style="color: #FFD43B;"></i>
-                        </div>
-
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item bg-transparent text-center fs-5 p-0"
