@@ -5,7 +5,7 @@
 <body>
 <style>
     body {
-        background-image: url('/img/sfondo.png');
+        background-image: url('/img/');
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -29,7 +29,7 @@
 
 
         <div class=" col-2 d-flex flex-column flex-shrink-0 p-3">
-            <div>
+            <div class="bg-opacity-10 bg-secondary py-4 px-2">
                 <h3>Search for</h3>
 
                 <form
@@ -46,7 +46,7 @@
                         <label class="form-check-label" th:for="|cat-${cat.id}|" th:text="${cat.name}"></label>
                     </div>
 
-                    <button class="btn btn-primary" type="submit"> Search</button>
+                    <button class="btn btn-primary mt-3" type="submit"> Search</button>
                 </form>
 
             </div>
