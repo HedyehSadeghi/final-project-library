@@ -35,11 +35,11 @@
                         <h4 th:text="|${book.price} euro|"></h4>
                     <div class="col-4">
                         <h5>Category</h5>
-                        <ul class="ps-0" th:each="cat : ${book.categoryList}">
+                        <ul class="ps-0 mb-0" th:each="cat : ${book.categoryList}">
                             <li class="list-unstyled" th:text="${cat.name}"></li>
                         </ul>
                     </div>
-                    <h3>Description</h3>
+                    <h3 class="mt-4">Description</h3>
 
                     <div class="col-8">
                         <hr>
