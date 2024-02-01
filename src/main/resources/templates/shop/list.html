@@ -5,7 +5,7 @@
 <body>
 <style>
     body {
-        background-image: url('/img/sfondo1.png');
+        background-image: url('/img/sfondo.png');
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -28,7 +28,7 @@
         <div class="alert alert-info" th:if="${shopList.size() ==0}"> The list is empty</div>
 
 
-        <div class=" col-2 d-flex flex-column flex-shrink-0 p-3 bg-transparent">
+        <div class=" col-2 d-flex flex-column flex-shrink-0 p-3">
             <div>
                 <h3>Search for</h3>
 
@@ -56,12 +56,14 @@
 
 
         <div class="col-10 d-flex justify-content-between flex-wrap">
-            <div class="col-4 my-5 " th:each="book: ${shopList}">
+            <div class="col-4 my-3 " th:each="book: ${shopList}">
 
-                <div class="card zoom-hover border border-0" style="width: 18rem;" th:unless="${shopList.size() ==0}">
+                <div class="card bg-opacity-10 bg-secondary zoom-hover border border-0" style="width: 18rem;"
+                     th:unless="${shopList.size() ==0}">
                     <img alt="..." class="card-img-top rounded-bottom" height="400rem" th:src="${book.photo}">
-                    <div class="card-body">
+                    <div class="card-body pb-0">
                         <a class="card-title d-flex justify-content-center text-decoration-none fw-bold"
+                           style="height: 50px;"
                            th:href="@{/shop/show/{id}(id=${book.id})}"
                            th:text="${book.title}">Card
                             title</a>
@@ -103,10 +105,13 @@
 
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item" th:text="|${book.price} euro|"></li>
+                        <li class="list-group-item bg-transparent text-center fs-5 p-0"
+                            th:text="|${book.price} euro|"></li>
                     </ul>
-                    <div class="card-body">
-                        <a class="btn btn-success" role="button" th:href="@{/shop/buy/{id}(id=${book.id})}">Buy now</a>
+                    <div class="card-body text-center">
+                        <a class="btn btn-success" role="button"
+                           th:href="@{/shop/buy/{id}(id=${book.id})}">Buy
+                            now</a>
                     </div>
                 </div>
 
