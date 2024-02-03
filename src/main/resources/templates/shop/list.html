@@ -46,6 +46,37 @@
                         <label class="form-check-label" th:for="|cat-${cat.id}|" th:text="${cat.name}"></label>
                     </div>
 
+
+                    <h5>Rating:</h5>
+
+
+                    <div class="form-check" th:each="i : ${#numbers.sequence(1, 5)}">
+                        <input class="form-check-input" name="rating" th:id="'rating' + ${i}" th:value="${i}"
+                               type="checkbox">
+                        <label class="form-check-label" th:for="'rating' + ${i}">
+                            <span th:each="j : ${#numbers.sequence(1, i)}">
+                                <i class="fas fa-star" style="color: #FFD43B;"></i>
+                            </span>
+                        </label>
+                    </div>
+
+
+                    <h5>Price:</h5>
+
+                    <div class="form-check" th:each="i : ${#numbers.sequence(1, 4)}">
+                        <input class="form-check-input" name="price" th:id="'price' + ${i}" th:value="${i}"
+                               type="checkbox">
+                        <label class="form-check-label" th:for="'price' + ${i}">
+                            <span>
+                                <th:block th:if="${i == 1}">Up to 9.99 €</th:block>
+                                <th:block th:if="${i == 2}">10 - 19.99 €</th:block>
+                                <th:block th:if="${i == 3}">20 - 29.99 €</th:block>
+                                <th:block th:if="${i == 4}">+ 30 € </th:block>
+                            </span>
+                        </label>
+                    </div>
+
+
                     <button class="btn btn-primary mt-3" type="submit"> Search</button>
                 </form>
 

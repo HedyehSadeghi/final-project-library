@@ -16,11 +16,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Controller
 @RequestMapping("/shop")
@@ -34,28 +32,82 @@ public class ShopController {
     private ClientPurchaseRepository clientPurchaseRepository;
 
     @GetMapping
-    public String shop(@RequestParam(name = "keyword", required = false) String searchKeyword, @RequestParam(name = "category", required = false) List<Category> categories, Model model) {
+    public String shop(@RequestParam(name = "keyword", required = false) String searchKeyword, @RequestParam(name = "category", required = false) List<Category> categories, @RequestParam(name = "rating", required = false) Integer rating, @RequestParam(name = "price", required = false) Integer price, Model model) {
         List<Book> shopList = new ArrayList<>();
-        if (searchKeyword != null && categories == null) {
+        if (searchKeyword != null && categories == null && rating == null && price == null) {
             shopList = bookRepository.findByTitleContaining(searchKeyword);
-        } else if (searchKeyword == null && categories == null) {
+
+        } else if (searchKeyword == null && categories == null && rating == null && price == null) {
             shopList = bookRepository.findAll();
-        } else if (searchKeyword == null && (categories != null)) {
+
+        } else if (searchKeyword == null && (categories != null || rating != null || price != null)) {
             shopList = bookRepository.findAll();
-            List<Book> filteredList = new ArrayList<>();
+            List<Book> filteredList1 = new ArrayList<>();
+            List<Book> filteredList2 = new ArrayList<>();
+            List<Book> filteredList3 = new ArrayList<>();
+
 
             if (!(categories.isEmpty())) {
                 for (Book book : shopList) {
                     for (Category cat : book.getCategoryList()) {
                         if (categories.contains(cat)) {
-                            filteredList.add(book);
+                            filteredList1.add(book);
                         }
                     }
                 }
-
+            } else {
+                filteredList1 = shopList;
             }
-            shopList = filteredList;
+
+
+            if (rating != null) {
+                for (Book book : shopList) {
+                    if (book.getRating() == rating) {
+                        filteredList2.add(book);
+                    }
+                }
+            } else {
+                filteredList2 = shopList;
+            }
+
+
+            if (price != null) {
+                for (Book book : shopList) {
+                    if (price == 1) {
+                        if (book.getPrice().compareTo(BigDecimal.valueOf(9.99)) < 0) {
+                            filteredList3.add(book);
+                        }
+                    } else if (price == 2) {
+                        if (book.getPrice().compareTo(BigDecimal.valueOf(10)) > 0 && book.getPrice().compareTo(BigDecimal.valueOf(19.99)) < 0) {
+                            filteredList3.add(book);
+                        }
+                    } else if (price == 3) {
+                        if (book.getPrice().compareTo(BigDecimal.valueOf(20)) > 0 && book.getPrice().compareTo(BigDecimal.valueOf(29.99)) < 0) {
+                            filteredList3.add(book);
+                        }
+
+                    } else if (price == 4) {
+                        if (book.getPrice().compareTo(BigDecimal.valueOf(30)) > 0) {
+                            filteredList3.add(book);
+                        }
+                    }
+                }
+            } else {
+                filteredList3 = shopList;
+            }
+
+            Set<Book> set1 = new HashSet<>(filteredList1);
+            Set<Book> set2 = new HashSet<>(filteredList2);
+            Set<Book> set3 = new HashSet<>(filteredList3);
+
+            set1.retainAll(set2);
+            set1.retainAll(set3);
+
+
+            List<Book> intersection = new ArrayList<>(set1);
+            shopList = intersection;
         }
+        
 
         model.addAttribute("shopList", new HashSet<>(shopList));
         model.addAttribute("categoryList", categoryRepository.findAll());
