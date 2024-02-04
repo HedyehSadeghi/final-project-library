@@ -47,7 +47,7 @@ public class ShopController {
             List<Book> filteredList3 = new ArrayList<>();
 
 
-            if (!(categories.isEmpty())) {
+            if (!(categories == null)) {
                 for (Book book : shopList) {
                     for (Category cat : book.getCategoryList()) {
                         if (categories.contains(cat)) {
@@ -107,7 +107,7 @@ public class ShopController {
             List<Book> intersection = new ArrayList<>(set1);
             shopList = intersection;
         }
-        
+
 
         model.addAttribute("shopList", new HashSet<>(shopList));
         model.addAttribute("categoryList", categoryRepository.findAll());
